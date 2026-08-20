@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>모니터 잔상 및 고스팅 테스트 - 응답속도 검사기 (UFO Test)</title>
+  <meta name="description" content="모니터 모션 블러, 패널 응답속도 (GtG) 및 오버드라이브 역고스팅(흰색 테두리) 현상을 240~1440 px/s 고속 이동 패턴으로 정밀 테스트합니다.">
+  <meta name="keywords" content="모니터 잔상 테스트, 모니터 고스팅 테스트, ufo test 한국어, 응답속도 테스트, 오버드라이브 잔상 테스트">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/ko/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/monitor-motion-blur.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/monitor-motion-blur.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (KO) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> 스크롤 & 버튼</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS 광클 테스트</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> 스페이스바 연타</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 폴링레이트 (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104키 키보드</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> 게임패드</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">추가 도구 ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ 반응속도 테스트</a>
+            <a href="screen-dead-pixel.html">🖥️ 모니터 불량화소</a>
+            <a href="monitor-motion-blur.html" class="active">🏎️ 잔상 & 고스팅</a>
+            <a href="microphone-test.html">🎙️ 마이크 & 에코</a>
+            <a href="webcam-test.html">📷 웹캠 & FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 KO ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB 텔레메트리</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>고주사율 패널 응답속도 및 잔상 평가</span>
+      </div>
+      <h1 class="hero-title">모니터 잔상 및 고스팅 테스트</h1>
+      <p class="hero-subtitle">
+        이동하는 패턴을 눈으로 추적하여 끌림 현상(응답속도 지연) 또는 오버드라이브 과도 적용으로 인한 흰색 잔상(오버슈트)을 확인하세요.
+      </p>
+    </div>
+
+    <div class="glass-panel" style="margin-bottom:2.5rem;">
+      <div class="control-bar">
+        <div class="toolbar-group">
+          <button class="btn btn-secondary speed-preset" data-speed="240">240 px/s</button>
+          <button class="btn btn-secondary speed-preset" data-speed="480">480 px/s</button>
+          <button class="btn btn-cyan speed-preset" data-speed="960">960 px/s (표준)</button>
+          <button class="btn btn-secondary speed-preset" data-speed="1440">1440 px/s</button>
+        </div>
+        <div style="font-size:0.85rem; color:var(--text-muted);">
+          모니터 수직동기 주사율: <strong id="motionFps" style="color:var(--accent-emerald); font-family:var(--font-mono);">60 Hz</strong>
+        </div>
+      </div>
+
+      <canvas id="motionCanvas" class="motion-blur-stage"></canvas>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% 클라이언트 순수 JavaScript 구동. 추적기 없음. 비공개 초저지연 하드웨어 벤치마크.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>입력 장치 진단</h4>
+          <ul>
+            <li><a href="index.html">🖱️ 스크롤 & 버튼</a></li>
+            <li><a href="cps-test.html">⚡ CPS 광클 테스트</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ 스페이스바 연타</a></li>
+            <li><a href="polling-rate-test.html">🔄 폴링레이트 (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104키 키보드</a></li>
+            <li><a href="gamepad-test.html">🎮 게임패드</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>디스플레이 & 미디어</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ 반응속도 테스트</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ 모니터 불량화소</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ 잔상 & 고스팅</a></li>
+            <li><a href="microphone-test.html">🎙️ 마이크 & 에코</a></li>
+            <li><a href="webcam-test.html">📷 웹캠 & FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>약관 및 신뢰</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ 개인정보 처리방침</a></li>
+            <li><a href="../terms-of-service.html">📜 이용약관</a></li>
+            <li><a href="../about.html">💡 소개</a></li>
+            <li><a href="../contact.html">✉️ 문의 및 지원</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. All rights reserved.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">개인정보 처리방침</a>
+          <a href="../terms-of-service.html">이용약관</a>
+          <a href="../about.html">소개</a>
+          <a href="../contact.html">문의 및 지원</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    const canvas = document.getElementById('motionCanvas');
+    const ctx = canvas.getContext('2d');
+    const fpsLabel = document.getElementById('motionFps');
+    const speedBtns = document.querySelectorAll('.speed-preset');
+
+    let speed = 960;
+    let posX = 0;
+    let lastTime = performance.now();
+    let frameCount = 0;
+    let fpsTimer = performance.now();
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    speedBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        speed = parseInt(btn.dataset.speed, 10);
+        speedBtns.forEach(b => {
+          b.classList.remove('btn-cyan');
+          b.classList.add('btn-secondary');
+        });
+        btn.classList.remove('btn-secondary');
+        btn.classList.add('btn-cyan');
+      });
+    });
+
+    function draw(now) {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+
+      frameCount++;
+      if (now - fpsTimer >= 1000) {
+        fpsLabel.textContent = `${frameCount} Hz`;
+        frameCount = 0;
+        fpsTimer = now;
+      }
+
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+
+      posX += speed * dt;
+      if (posX > w + 80) posX = -80;
+
+      ctx.fillStyle = '#0f172a';
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.33); ctx.lineTo(w, h * 0.33);
+      ctx.moveTo(0, h * 0.66); ctx.lineTo(w, h * 0.66);
+      ctx.stroke();
+
+      // Top UFO (Cyan)
+      ctx.fillStyle = '#06b6d4';
+      ctx.beginPath();
+      ctx.ellipse(posX, h * 0.2, 35, 14, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(posX, h * 0.2 - 5, 10, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Middle Block (White High-Contrast)
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(posX - 25, h * 0.5 - 18, 50, 36);
+
+      // Bottom UFO (Emerald)
+      ctx.fillStyle = '#10b981';
+      ctx.beginPath();
+      ctx.ellipse(posX, h * 0.8, 35, 14, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
+  </script>
+</body>
+</html>

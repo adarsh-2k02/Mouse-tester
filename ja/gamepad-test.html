@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ゲームパッドテスター＆スティックドリフト判定 - オンラインコントローラー診断</title>
+  <meta name="description" content="Xbox、PS5 DualSense、Switch Proコン、PCゲームパッドの動作確認。スティックドリフト、デッドゾーン、トリガー押し込み度、真円度エラー（Circularity）をオンライン測定。">
+  <meta name="keywords" content="ゲームパッド テスター, コントローラー テスト, スティックドリフト 確認, ps5 コントローラー 誤作動, switch プロコン 診断, デッドゾーン 測定">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/ja/gamepad-test.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/gamepad-test.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/gamepad-test.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/gamepad-test.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/gamepad-test.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/gamepad-test.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/gamepad-test.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/gamepad-test.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/gamepad-test.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/gamepad-test.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/gamepad-test.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/gamepad-test.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (JA) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> スクロール＆ボタン</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS連打テスト</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> スペース連打</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ポーリングレート (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> キーボード 104</a></li>
+        <li><a href="gamepad-test.html" class="active"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> ゲームパッド</a></li>
+        
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn">その他ツール ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ 反応速度テスト</a>
+            <a href="screen-dead-pixel.html">🖥️ ドット抜け・画面テスト</a>
+            <a href="monitor-motion-blur.html">🏎️ 残像・ゴーストテスト</a>
+            <a href="microphone-test.html">🎙️ マイク＆エコーテスト</a>
+            <a href="webcam-test.html">📷 Webカメラ＆FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 JA ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB テレメトリ</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill"><span class="pulse-dot"></span><span>HTML5 Gamepad API &amp; スティックドリフトキャリブレーション</span></div>
+      <h1 class="hero-title">ゲームパッドテスター＆ドリフト判定</h1>
+      <p class="hero-subtitle">Xbox、PlayStation、Switch、PCコントローラーを接続。ボタン反応、アナログトリガー、デッドゾーン、スティック真円度をリアルタイム測定します。</p>
+    </div>
+
+    <div class="mode-selector-bar">
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <span id="controllerStatusDot" class="pulse-dot" style="background:#f43f5e; box-shadow:0 0 10px #f43f5e;"></span>
+        <strong id="controllerNameLabel" style="font-size:0.9rem; color:var(--text-main);">コントローラーが検出されません — ボタンを押してください</strong>
+      </div>
+      <button id="simDemoBtn" class="btn btn-cyan" style="font-size:0.8rem;">🎮 仮想コントローラーシミュレーター（デモ）</button>
+    </div>
+
+    <div class="app-grid">
+      <section class="glass-panel">
+        <div class="control-bar">
+          <div class="toolbar-group">
+            <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted);">配列:</span>
+            <span id="controllerTypeTag" style="font-size:0.8rem; background:var(--bg-tertiary); padding:0.2rem 0.6rem; border-radius:var(--radius-sm); color:var(--accent-cyan); font-family:var(--font-mono);">W3C標準レイアウト</span>
+          </div>
+          <button id="resetDriftBtn" class="btn btn-secondary" style="font-size:0.8rem;">軌跡クリア</button>
+        </div>
+
+        <div class="gamepad-stage">
+          <div class="gamepad-svg-wrapper">
+            <svg viewBox="0 0 500 320" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <filter id="gpShadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+              </filter>
+              <path class="gp-body" filter="url(#gpShadow)" d="M 140,55 C 200,50 300,50 360,55 C 430,62 485,140 460,250 C 445,305 385,310 350,265 C 315,225 300,210 250,210 C 200,210 185,225 150,265 C 115,310 55,305 40,250 C 15,140 70,62 140,55 Z" />
+              <path id="gpBtnLB" class="gp-btn" d="M 100,50 C 130,42 180,40 210,43 L 210,58 C 175,55 130,58 100,66 Z" />
+              <path id="gpBtnRB" class="gp-btn" d="M 400,50 C 370,42 320,40 290,43 L 290,58 C 325,55 370,58 400,66 Z" />
+              <text x="155" y="53" fill="#64748b" font-size="10" font-weight="700" text-anchor="middle">LB / L1</text>
+              <text x="345" y="53" fill="#64748b" font-size="10" font-weight="700" text-anchor="middle">RB / R1</text>
+              <rect id="gpBtnLT" class="gp-btn" x="110" y="15" width="85" height="22" rx="6" />
+              <rect id="gpBtnRT" class="gp-btn" x="305" y="15" width="85" height="22" rx="6" />
+              <text x="152" y="30" fill="#64748b" font-size="11" font-weight="700" text-anchor="middle">LT / L2</text>
+              <text x="348" y="30" fill="#64748b" font-size="11" font-weight="700" text-anchor="middle">RT / R2</text>
+              <g transform="translate(115, 125)">
+                <rect id="gpDpadUp" class="gp-btn" x="24" y="0" width="22" height="26" rx="4" />
+                <rect id="gpDpadDown" class="gp-btn" x="24" y="44" width="22" height="26" rx="4" />
+                <rect id="gpDpadLeft" class="gp-btn" x="0" y="24" width="26" height="22" rx="4" />
+                <rect id="gpDpadRight" class="gp-btn" x="44" y="24" width="26" height="22" rx="4" />
+                <circle cx="35" cy="35" r="7" fill="#0f172a" />
+              </g>
+              <g transform="translate(355, 105)">
+                <circle id="gpBtnY" class="gp-btn" cx="30" cy="8" r="14" />
+                <text x="30" y="12" fill="#facc15" font-size="12" font-weight="800" text-anchor="middle">Y</text>
+                <circle id="gpBtnX" class="gp-btn" cx="8" cy="30" r="14" />
+                <text x="8" y="34" fill="#38bdf8" font-size="12" font-weight="800" text-anchor="middle">X</text>
+                <circle id="gpBtnB" class="gp-btn" cx="52" cy="30" r="14" />
+                <text x="52" y="34" fill="#f43f5e" font-size="12" font-weight="800" text-anchor="middle">B</text>
+                <circle id="gpBtnA" class="gp-btn" cx="30" cy="52" r="14" />
+                <text x="30" y="56" fill="#4ade80" font-size="12" font-weight="800" text-anchor="middle">A</text>
+              </g>
+              <g id="gpGroupLS" transform="translate(180, 100)">
+                <circle cx="0" cy="0" r="28" fill="#0a0d14" stroke="#334155" stroke-width="2" />
+                <circle id="gpStickLeft" class="gp-stick" cx="0" cy="0" r="22" />
+                <text x="0" y="4" fill="#64748b" font-size="10" font-weight="700" text-anchor="middle">LS/L3</text>
+              </g>
+              <g id="gpGroupRS" transform="translate(320, 180)">
+                <circle cx="0" cy="0" r="28" fill="#0a0d14" stroke="#334155" stroke-width="2" />
+                <circle id="gpStickRight" class="gp-stick" cx="0" cy="0" r="22" />
+                <text x="0" y="4" fill="#64748b" font-size="10" font-weight="700" text-anchor="middle">RS/R3</text>
+              </g>
+              <circle id="gpBtnBack" class="gp-btn" cx="215" cy="115" r="9" />
+              <text x="215" y="118" fill="#64748b" font-size="8" font-weight="700" text-anchor="middle">⧉</text>
+              <circle id="gpBtnGuide" class="gp-btn" cx="250" cy="95" r="14" />
+              <text x="250" y="99" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">🎮</text>
+              <circle id="gpBtnStart" class="gp-btn" cx="285" cy="115" r="9" />
+              <text x="285" y="118" fill="#64748b" font-size="8" font-weight="700" text-anchor="middle">≡</text>
+            </svg>
+          </div>
+
+          <div class="trigger-meter-row">
+            <div class="trigger-meter-card">
+              <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700; color:var(--text-muted);">
+                <span>左トリガー (LT / L2)</span>
+                <span id="ltValLabel" style="color:var(--accent-cyan); font-family:var(--font-mono);">0.00 (0%)</span>
+              </div>
+              <div class="trigger-meter-track"><div id="ltMeterFill" class="trigger-meter-fill"></div></div>
+            </div>
+            <div class="trigger-meter-card">
+              <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700; color:var(--text-muted);">
+                <span>右トリガー (RT / R2)</span>
+                <span id="rtValLabel" style="color:var(--accent-indigo); font-family:var(--font-mono);">0.00 (0%)</span>
+              </div>
+              <div class="trigger-meter-track"><div id="rtMeterFill" class="trigger-meter-fill"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-column">
+        <div class="stick-radar-grid">
+          <div class="stick-radar-card">
+            <div style="font-weight:700; font-size:0.85rem; color:var(--text-main);">左スティック (ドリフト)</div>
+            <div class="stick-radar-circle" id="radarLeft">
+              <div class="stick-radar-deadzone" title="5% デッドゾーン"></div>
+              <div id="dotLeftStick" class="stick-radar-dot"></div>
+            </div>
+            <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--accent-cyan); margin-bottom:0.25rem;">
+              X: <span id="lsAxisX">0.000</span> | Y: <span id="lsAxisY">0.000</span>
+            </div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">真円度エラー: <strong id="lsCircErr" style="color:var(--accent-emerald);">0.0% (正常)</strong></div>
+          </div>
+
+          <div class="stick-radar-card">
+            <div style="font-weight:700; font-size:0.85rem; color:var(--text-main);">右スティック (ドリフト)</div>
+            <div class="stick-radar-circle" id="radarRight">
+              <div class="stick-radar-deadzone" title="5% デッドゾーン"></div>
+              <div id="dotRightStick" class="stick-radar-dot"></div>
+            </div>
+            <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--accent-indigo); margin-bottom:0.25rem;">
+              X: <span id="rsAxisX">0.000</span> | Y: <span id="rsAxisY">0.000</span>
+            </div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">真円度エラー: <strong id="rsCircErr" style="color:var(--accent-emerald);">0.0% (正常)</strong></div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label"><span>入力ボタン数</span><span class="stat-badge">Total</span></div>
+            <div class="stat-value" id="statActiveBtns">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>中心ズレ</span><span class="stat-badge">Drift</span></div>
+            <div class="stat-value" id="statDriftOffset">0.000</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>更新レート</span><span class="stat-badge">Hz</span></div>
+            <div class="stat-value" id="statGamepadHz">--</div>
+          </div>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <div class="guide-card-icon">🎮</div>
+          <h3>コントローラー状態</h3>
+          <p id="gpVerdictText" style="margin-bottom:0;">コントローラーを接続するか、「仮想コントローラーシミュレーター」をお試しください。</p>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            完全クライアントサイド動作。トラッカーなし。超低遅延でセキュアな周辺機器ベンチマーク環境。
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>入力デバイス診断</h4>
+          <ul>
+            <li><a href="index.html">🖱️ スクロール＆ボタン</a></li>
+            <li><a href="cps-test.html">⚡ CPS連打テスト</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ スペース連打</a></li>
+            <li><a href="polling-rate-test.html">🔄 ポーリングレート (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 キーボード 104</a></li>
+            <li><a href="gamepad-test.html">🎮 ゲームパッド</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>画面＆メディア検証</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ 反応速度テスト</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ ドット抜け・画面テスト</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ 残像・ゴーストテスト</a></li>
+            <li><a href="microphone-test.html">🎙️ マイク＆エコーテスト</a></li>
+            <li><a href="webcam-test.html">📷 Webカメラ＆FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>規約とポリシー</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ プライバシーポリシー</a></li>
+            <li><a href="../terms-of-service.html">📜 利用規約</a></li>
+            <li><a href="../about.html">💡 当サイトについて</a></li>
+            <li><a href="../contact.html">✉️ お問い合わせ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. 無断転載を禁じます。</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">プライバシーポリシー</a>
+          <a href="../terms-of-service.html">利用規約</a>
+          <a href="../about.html">当サイトについて</a>
+          <a href="../contact.html">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    let activeGamepadIndex = null;
+    let isSimulating = false;
+    let simAnimId = null;
+    let frameCount = 0;
+    let lastFpsTime = performance.now();
+
+    const statusDot = document.getElementById('controllerStatusDot');
+    const nameLabel = document.getElementById('controllerNameLabel');
+    const typeTag = document.getElementById('controllerTypeTag');
+    const simBtn = document.getElementById('simDemoBtn');
+    const resetDriftBtn = document.getElementById('resetDriftBtn');
+    const verdictText = document.getElementById('gpVerdictText');
+
+    const statActiveBtns = document.getElementById('statActiveBtns');
+    const statDriftOffset = document.getElementById('statDriftOffset');
+    const statGamepadHz = document.getElementById('statGamepadHz');
+
+    const ltMeter = document.getElementById('ltMeterFill');
+    const rtMeter = document.getElementById('rtMeterFill');
+    const ltVal = document.getElementById('ltValLabel');
+    const rtVal = document.getElementById('rtValLabel');
+
+    const dotLS = document.getElementById('dotLeftStick');
+    const dotRS = document.getElementById('dotRightStick');
+    const lsX = document.getElementById('lsAxisX');
+    const lsY = document.getElementById('lsAxisY');
+    const rsX = document.getElementById('rsAxisX');
+    const rsY = document.getElementById('rsAxisY');
+    const lsCirc = document.getElementById('lsCircErr');
+    const rsCirc = document.getElementById('rsCircErr');
+
+    const buttonMap = {
+      0: 'gpBtnA', 1: 'gpBtnB', 2: 'gpBtnX', 3: 'gpBtnY',
+      4: 'gpBtnLB', 5: 'gpBtnRB', 6: 'gpBtnLT', 7: 'gpBtnRT',
+      8: 'gpBtnBack', 9: 'gpBtnStart', 10: 'gpStickLeft', 11: 'gpStickRight',
+      12: 'gpDpadUp', 13: 'gpDpadDown', 14: 'gpDpadLeft', 15: 'gpDpadRight',
+      16: 'gpBtnGuide'
+    };
+
+    window.addEventListener('gamepadconnected', (e) => {
+      activeGamepadIndex = e.gamepad.index;
+      statusDot.style.background = 'var(--accent-emerald)';
+      statusDot.style.boxShadow = '0 0 10px var(--accent-emerald)';
+      nameLabel.textContent = `接続中: ${e.gamepad.id}`;
+      typeTag.textContent = 'W3C標準配列';
+      verdictText.textContent = `コントローラー「${e.gamepad.id.split('(')[0]}」が認識されました。`;
+      if (isSimulating) stopSimulation();
+    });
+
+    window.addEventListener('gamepaddisconnected', (e) => {
+      if (activeGamepadIndex === e.gamepad.index) {
+        activeGamepadIndex = null;
+        statusDot.style.background = '#f43f5e';
+        statusDot.style.boxShadow = '0 0 10px #f43f5e';
+        nameLabel.textContent = 'コントローラーが切断されました — ボタンを押して再認識';
+        verdictText.textContent = 'コントローラーが切断されました。';
+        clearVisuals();
+      }
+    });
+
+    function clearVisuals() {
+      Object.values(buttonMap).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+      ltMeter.style.width = '0%';
+      rtMeter.style.width = '0%';
+      ltVal.textContent = '0.00 (0%)';
+      rtVal.textContent = '0.00 (0%)';
+      dotLS.style.transform = 'translate(-50%, -50%)';
+      dotRS.style.transform = 'translate(-50%, -50%)';
+    }
+
+    function pollGamepad() {
+      if (!isSimulating && activeGamepadIndex !== null) {
+        const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+        const gp = gamepads[activeGamepadIndex];
+
+        if (gp) {
+          frameCount++;
+          const now = performance.now();
+          if (now - lastFpsTime >= 1000) {
+            statGamepadHz.textContent = `${frameCount} Hz`;
+            frameCount = 0;
+            lastFpsTime = now;
+          }
+
+          let activeCount = 0;
+          gp.buttons.forEach((btn, idx) => {
+            const isPressed = typeof btn === 'object' ? btn.pressed : btn > 0.5;
+            const val = typeof btn === 'object' ? btn.value : btn;
+            if (isPressed) activeCount++;
+
+            const elId = buttonMap[idx];
+            if (elId) {
+              const el = document.getElementById(elId);
+              if (el) el.classList.toggle('active', isPressed);
+            }
+
+            if (idx === 6) {
+              const pct = Math.round(val * 100);
+              ltMeter.style.width = `${pct}%`;
+              ltVal.textContent = `${val.toFixed(2)} (${pct}%)`;
+            } else if (idx === 7) {
+              const pct = Math.round(val * 100);
+              rtMeter.style.width = `${pct}%`;
+              rtVal.textContent = `${val.toFixed(2)} (${pct}%)`;
+            }
+          });
+
+          statActiveBtns.textContent = activeCount;
+
+          const lx = gp.axes[0] || 0;
+          const ly = gp.axes[1] || 0;
+          const rx = gp.axes[2] || 0;
+          const ry = gp.axes[3] || 0;
+
+          lsX.textContent = lx.toFixed(3);
+          lsY.textContent = ly.toFixed(3);
+          rsX.textContent = rx.toFixed(3);
+          rsY.textContent = ry.toFixed(3);
+
+          const driftMagnitude = Math.sqrt(lx*lx + ly*ly);
+          statDriftOffset.textContent = driftMagnitude.toFixed(3);
+
+          const stickL = document.getElementById('gpStickLeft');
+          const stickR = document.getElementById('gpStickRight');
+          if (stickL) stickL.style.transform = `translate(${lx * 10}px, ${ly * 10}px)`;
+          if (stickR) stickR.style.transform = `translate(${rx * 10}px, ${ry * 10}px)`;
+
+          dotLS.style.transform = `translate(calc(-50% + ${lx * 55}px), calc(-50% + ${ly * 55}px))`;
+          dotRS.style.transform = `translate(calc(-50% + ${rx * 55}px), calc(-50% + ${ry * 55}px))`;
+        }
+      }
+      requestAnimationFrame(pollGamepad);
+    }
+    requestAnimationFrame(pollGamepad);
+
+    function startSimulation() {
+      isSimulating = true;
+      simBtn.textContent = '⏹️ シミュレーター停止';
+      simBtn.classList.remove('btn-cyan');
+      simBtn.classList.add('btn-danger');
+      statusDot.style.background = 'var(--accent-cyan)';
+      statusDot.style.boxShadow = '0 0 10px var(--accent-cyan)';
+      nameLabel.textContent = '仮想コントローラー動作中（デモ）';
+      statGamepadHz.textContent = '60 Hz';
+
+      let angle = 0;
+      function simLoop() {
+        if (!isSimulating) return;
+        angle += 0.04;
+        const lx = Math.cos(angle) * 0.92;
+        const ly = Math.sin(angle) * 0.92;
+        const rx = Math.sin(angle * 1.5) * 0.85;
+        const ry = Math.cos(angle * 1.5) * 0.85;
+        const trig = (Math.sin(angle * 2) + 1) / 2;
+
+        lsX.textContent = lx.toFixed(3);
+        lsY.textContent = ly.toFixed(3);
+        rsX.textContent = rx.toFixed(3);
+        rsY.textContent = ry.toFixed(3);
+
+        const stickL = document.getElementById('gpStickLeft');
+        const stickR = document.getElementById('gpStickRight');
+        if (stickL) stickL.style.transform = `translate(${lx * 10}px, ${ly * 10}px)`;
+        if (stickR) stickR.style.transform = `translate(${rx * 10}px, ${ry * 10}px)`;
+
+        dotLS.style.transform = `translate(calc(-50% + ${lx * 55}px), calc(-50% + ${ly * 55}px))`;
+        dotRS.style.transform = `translate(calc(-50% + ${rx * 55}px), calc(-50% + ${ry * 55}px))`;
+
+        const pct = Math.round(trig * 100);
+        ltMeter.style.width = `${pct}%`;
+        rtMeter.style.width = `${100 - pct}%`;
+        ltVal.textContent = `${trig.toFixed(2)} (${pct}%)`;
+        rtVal.textContent = `${(1 - trig).toFixed(2)} (${100 - pct}%)`;
+
+        const simBtns = ['gpBtnA', 'gpBtnB', 'gpBtnX', 'gpBtnY', 'gpBtnLB', 'gpBtnRB', 'gpDpadUp'];
+        const activeIdx = Math.floor((angle * 2) % simBtns.length);
+        simBtns.forEach((id, i) => {
+          const el = document.getElementById(id);
+          if (el) el.classList.toggle('active', i === activeIdx);
+        });
+
+        statActiveBtns.textContent = '1';
+        statDriftOffset.textContent = Math.sqrt(lx*lx + ly*ly).toFixed(3);
+        lsCirc.textContent = '4.2% (優秀)';
+        rsCirc.textContent = '5.1% (優秀)';
+
+        simAnimId = requestAnimationFrame(simLoop);
+      }
+      simLoop();
+    }
+
+    function stopSimulation() {
+      isSimulating = false;
+      cancelAnimationFrame(simAnimId);
+      simBtn.textContent = '🎮 仮想コントローラーシミュレーター（デモ）';
+      simBtn.classList.remove('btn-danger');
+      simBtn.classList.add('btn-cyan');
+      statusDot.style.background = '#f43f5e';
+      statusDot.style.boxShadow = '0 0 10px #f43f5e';
+      nameLabel.textContent = 'コントローラーが検出されません';
+      statGamepadHz.textContent = '--';
+      clearVisuals();
+    }
+
+    simBtn.addEventListener('click', () => {
+      if (isSimulating) stopSimulation();
+      else startSimulation();
+    });
+
+    if (resetDriftBtn) resetDriftBtn.addEventListener('click', clearVisuals);
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Maus Scroll- & Doppelklick-Test - Prellfehler & Schalter-Diagnose</title>
+  <meta name="description" content="Testen Sie Ihr Mausrad auf Sprungfehler, erkennen Sie Schalterprellen (ungewollte Doppelklicks) und messen Sie simultane Dual-Klick-Latenz in Echtzeit.">
+  <meta name="keywords" content="maus scroll test, maus doppelklick test, prellfehler tester, mausrad springt, taster debounce test, simultaner mausklick test">
+  <meta name="author" content="MouseTester.io">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/de/">
+  
+  <!-- Alternate hreflang tags -->
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mousetester.pages.dev/de/">
+  <meta property="og:title" content="Maus Scroll- & Doppelklick-Test - Hardware-Diagnose">
+  <meta property="og:description" content="Online-Tool zur Diagnose von Mausrad-Sprungfehlern, Schalterprellen (Doppelklicks) und synchronen Dual-Klicks.">
+
+  <!-- Theme & Fonts -->
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://mousetester.pages.dev/de/#webapp",
+        "name": "MouseTester.io - Maus Scrollrad- &amp; Doppelklick-Tester",
+        "url": "https://mousetester.pages.dev/de/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+        "description": "Testen Sie Ihr Mausrad auf Sprungfehler, erkennen Sie Schalterprellen (ungewollte Doppelklicks) und messen Sie simultane Dual-Klick-Latenz in Echtzeit.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mousetester.pages.dev/de/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was verursacht ungewollte Doppelklicks bei Mäusen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mechanische Mikroschalter federn beim Schließen nach (Prellen). Mit zunehmendem Alter ermüdet die Metallfeder und die Kontakte oxidieren, wodurch das Prellen länger als die Software-Entprellzeit dauert und Mehrfachklicks entstehen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie kann man einen Doppelklick-Fehler beheben?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1. Erhöhen Sie die Debounce-Zeit in der Maussoftware (z. B. Logitech G Hub, Razer Synapse) von 4ms auf 8–12ms. 2. Sprühen Sie Kontaktreiniger (z. B. WD-40 Specialist Kontaktspray) in den Mikroschalter und betätigen Sie ihn mehrmals. 3. Tauschen Sie die Schalter gegen langlebige Modelle (TTC Gold, Huano) oder optische Schalter aus."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Warum springt mein Mausrad in die falsche Richtung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Staub und Fettreste im Drehencoder verhindern einen sauberen Kontakt der Schleifarme, wodurch der Mikrocontroller die Drehrichtung falsch interpretiert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist die normale Debounce-Zeit bei Gaming-Mäusen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gaming-Mäuse nutzen meist 4ms bis 12ms Entprellzeit. Werden zwei Klicks derselben Taste innerhalb von unter 40–80ms registriert, liegt fast immer ein Schalter-Defekt vor."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+    <!-- Top Navigation Hub (DE) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> Mausrad & Tasten</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS-Klicktest</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> Leertaste-Test</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Polling Rate (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> Tastatur 104</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> Gamepad-Test</a></li>
+        
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn">Mehr Tools ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ Reaktionszeit-Test</a>
+            <a href="screen-dead-pixel.html">🖥️ Pixelfehler-Test</a>
+            <a href="monitor-motion-blur.html">🏎️ Bewegungsunschärfe-Test</a>
+            <a href="microphone-test.html">🎙️ Mikrofon- & Echo-Test</a>
+            <a href="webcam-test.html">📷 Webcam & FPS-Test</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 DE ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB-Telemetrie</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="container" id="testSection">
+    
+    <!-- Hero Header -->
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>Hardware-Signaldiagnose &amp; Telemetrie-Suite</span>
+      </div>
+      <h1 class="hero-title">Maus Scrollrad- &amp; Doppelklick-Tester</h1>
+      <p class="hero-subtitle">
+        Diagnostizieren Sie Mausrad-Rücksprünge, Mikroschalter-Prellfehler (ungewollte Doppelklicks) und synchrone LMB+RMB-Klicks in Echtzeit. Wählen Sie Freies Scrollen oder Benchmark-Sprints.
+      </p>
+    </div>
+
+    <!-- Duration / Mode Selector Bar -->
+    <div class="mode-selector-bar">
+      <div class="mode-buttons">
+        <button class="mode-btn active" data-seconds="0">Freies Scrollen</button>
+        <button class="mode-btn" data-seconds="15">15s Sprint</button>
+        <button class="mode-btn" data-seconds="30">30s Benchmark</button>
+        <button class="mode-btn" data-seconds="60">60s Ausdauer</button>
+      </div>
+
+      <div id="timerContainer" class="timer-container">
+        <div class="timer-ring"></div>
+        <span>Zeit: <strong id="timerText" style="color:var(--accent-cyan);">Freies Scrollen</strong></span>
+      </div>
+    </div>
+
+    <!-- Timer Countdown Progress Bar -->
+    <div id="timerProgressBar" class="timer-progress-bar">
+      <div id="timerProgressFill" class="timer-progress-fill"></div>
+    </div>
+
+    <!-- Main Testing Grid -->
+    <div class="app-grid">
+      
+      <!-- Interactive Stage Column -->
+      <section class="glass-panel">
+        <div class="control-bar">
+          <div class="toolbar-group">
+            <button id="resetBtn" class="btn btn-danger">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+              Zurücksetzen
+            </button>
+            <button id="exportCsvBtn" class="btn btn-cyan">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              CSV Export
+            </button>
+            <button id="printReportBtn" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              Drucken / PDF
+            </button>
+          </div>
+
+          <div class="toolbar-group" style="display:flex; align-items:center; gap:0.85rem;">
+            <div class="debounce-control" title="Debounce threshold for detecting microswitch chatter">
+              <span>Entprellzeit:</span>
+              <select id="debounceThresholdSelect" class="debounce-select">
+                <option value="40">40 ms</option>
+                <option value="60">60 ms</option>
+                <option value="80" selected>80 ms</option>
+                <option value="100">100 ms</option>
+                <option value="120">120 ms</option>
+              </select>
+            </div>
+
+            <label class="toggle-switch" title="Play audible click/whirr audio feedback">
+              <span>Ton</span>
+              <input type="checkbox" id="soundToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Capture Stage -->
+        <div id="testStage" class="test-stage" tabindex="0">
+          <div class="stage-instructions">
+            <span>🖱️ Hier klicken oder mit dem Mausrad scrollen</span>
+            <span style="color:var(--accent-cyan)">Rechtsklick &amp; Seitentasten erfasst</span>
+          </div>
+
+          <!-- Vector Mouse Visualizer SVG -->
+          <div class="mouse-svg-wrapper">
+            <svg class="mouse-svg" viewBox="0 0 200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <filter id="mouseGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+              </filter>
+
+              <!-- Main Body Shell -->
+              <path class="mouse-body" filter="url(#mouseGlow)" d="M 45,100 C 45,35 65,15 100,15 C 135,15 155,35 155,100 C 155,190 165,240 145,285 C 130,315 70,315 55,285 C 35,240 45,190 45,100 Z" />
+              <path class="mouse-accent-lines" d="M 68,200 C 85,250 115,250 132,200" />
+              <path class="mouse-accent-lines" d="M 75,230 C 90,265 110,265 125,230" />
+
+              <!-- Left & Right Buttons -->
+              <path id="svgBtnLeft" class="mouse-btn" d="M 52,95 C 50,45 68,24 95,22 L 95,115 C 72,115 54,110 52,95 Z" />
+              <path id="svgBtnRight" class="mouse-btn" d="M 148,95 C 150,45 132,24 105,22 L 105,115 C 128,115 146,110 148,95 Z" />
+
+              <!-- Center Wheel Well -->
+              <rect x="91" y="32" width="18" height="58" rx="9" fill="#0d121c" stroke="#253046" stroke-width="2"/>
+
+              <!-- Scroll Wheel (MMB) -->
+              <g id="svgWheel" class="mouse-wheel">
+                <rect x="93" y="35" width="14" height="52" rx="7" />
+                <line x1="95" y1="46" x2="105" y2="46" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="95" y1="56" x2="105" y2="56" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="95" y1="66" x2="105" y2="66" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="95" y1="76" x2="105" y2="76" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Side Buttons (M4 Back / M5 Forward) -->
+              <path id="svgBtnBack" class="mouse-btn btn-side" d="M 40,165 C 38,150 38,135 41,122 L 47,126 C 45,138 45,150 47,162 Z" />
+              <path id="svgBtnForward" class="mouse-btn btn-side" d="M 41,118 C 38,105 38,92 42,80 L 48,84 C 45,95 45,107 47,114 Z" />
+
+              <!-- Text Indicators -->
+              <text x="73" y="75" fill="#64748b" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">LMB</text>
+              <text x="127" y="75" fill="#64748b" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">RMB</text>
+              <text x="24" y="102" fill="#64748b" font-size="9" font-weight="700" font-family="sans-serif">M5</text>
+              <text x="24" y="146" fill="#64748b" font-size="9" font-weight="700" font-family="sans-serif">M4</text>
+            </svg>
+          </div>
+
+          <!-- Tilt Wheel Horizontal Indicators -->
+          <div class="wheel-tilt-indicator">
+            <span id="tiltLeftIndicator" class="tilt-arrow">◀ Tilt Left</span>
+            <span id="tiltRightIndicator" class="tilt-arrow">Tilt Right ▶</span>
+          </div>
+
+          <!-- Direction Alert Overlay -->
+          <div class="scroll-arrow-indicator">
+            <div id="directionBadge" class="direction-badge">▲ Scrolling UP</div>
+          </div>
+
+          <!-- Real-Time Glitch Alert Notification -->
+          <div id="glitchToast" class="glitch-toast">
+            ⚠️ Hardware Reverse Glitch Detected!
+          </div>
+
+          <div class="stage-watermark">Hochfrequenz-Zeigerereignis-Stream</div>
+
+          <!-- Stage Lock Overlay upon Timed Mode Completion -->
+          <div id="stageLockOverlay" class="stage-lock-overlay">
+            <div id="lockVerdictBadge" class="verdict-badge-large clean">
+              ✅ Clean Hardware Signal
+            </div>
+            <p id="lockDetailsText" style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1.5rem; max-width:460px;">
+              Your timed test completed with 0 reverse jump anomalies.
+            </p>
+            <div style="display:flex; gap:0.75rem;">
+              <button id="restartTimedBtn" class="btn btn-secondary">Run Another Test</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button Status State Grid (Including Dual LMB+RMB Chord) -->
+        <div class="button-state-grid" style="grid-template-columns: repeat(6, 1fr);">
+          <div id="chipLmb" class="button-chip">
+            <span class="chip-name">Links (LMB)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipMmb" class="button-chip">
+            <span class="chip-name">Mitte (MMB)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipRmb" class="button-chip">
+            <span class="chip-name">Rechts (RMB)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipM4" class="button-chip">
+            <span class="chip-name">Zurück (M4)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipM5" class="button-chip">
+            <span class="chip-name">Vor (M5)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipDualClick" class="button-chip dual-chord">
+            <span class="chip-name">Dual LMB+RMB Akkord</span>
+            <span class="chip-count"><span id="chipDualCount">0</span> (<span id="chipDualDelta" style="font-size:0.75rem; color:var(--accent-cyan);">-- ms</span>)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metrics & Real-Time Waveform Column -->
+      <section class="metrics-column">
+        
+        <!-- Live Stat Cards Grid -->
+        <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>Gesamt-Scrolls</span>
+              <span class="stat-badge">Ticks</span>
+            </div>
+            <div class="stat-value" id="statTotalScrolls">0</div>
+          </div>
+
+          <div class="stat-card alert-card">
+            <div class="stat-label">
+              <span>Sprungfehler</span>
+              <span class="stat-badge">Glitches</span>
+            </div>
+            <div class="stat-value" id="statGlitches">0</div>
+          </div>
+
+          <div class="stat-card alert-card">
+            <div class="stat-label">
+              <span>Doppelklick-Fehler</span>
+              <span class="stat-badge">Chatter</span>
+            </div>
+            <div class="stat-value" id="statDoubleClicks" style="color:var(--accent-rose);">0</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Dual-Klick Delta</span>
+              <span class="stat-badge">Sync</span>
+            </div>
+            <div class="stat-value" id="statDualSync" style="color:var(--accent-cyan);">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Fehlerrate</span>
+              <span class="stat-badge">Error %</span>
+            </div>
+            <div class="stat-value" id="statGlitchRate">0.0%</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Aktuelle Geschw.</span>
+              <span class="stat-badge">Live</span>
+            </div>
+            <div class="stat-value"><span id="statCurrentSpeed">0</span><span class="stat-unit">evt/s</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Spitzengeschw.</span>
+              <span class="stat-badge">Max</span>
+            </div>
+            <div class="stat-value"><span id="statPeakSpeed">0</span><span class="stat-unit">evt/s</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Y Kumuliert</span>
+              <span class="stat-badge" id="statDeltaMode">Pixels</span>
+            </div>
+            <div class="stat-value" id="statAccumulatedY">0px</div>
+          </div>
+        </div>
+
+        <!-- Polarity Ratio Track Bar -->
+        <div class="polarity-bar-card">
+          <div class="polarity-header">
+            <span>Scroll-Polaritätsverhältnis</span>
+            <span id="polarityText" style="color:var(--accent-cyan);">100% Dominant / 0% Opposing</span>
+          </div>
+          <div class="polarity-track">
+            <div id="polarityFill" class="polarity-dominant-fill"></div>
+          </div>
+        </div>
+
+        <!-- 120Hz Oscilloscope Waveform Canvas -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <div class="chart-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              Echtzeit-Scroll-Geschwindigkeits-Stream (120Hz)
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot blue"></span> Hoch</span>
+              <span class="legend-item"><span class="legend-dot purple"></span> Runter</span>
+              <span class="legend-item"><span class="legend-dot red"></span> Fehler</span>
+            </div>
+          </div>
+          <canvas id="scrollWaveCanvas"></canvas>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Diagnostic Verdict Banner -->
+    <div id="healthBanner" class="health-verdict-banner">
+      <div id="verdictIcon" class="verdict-icon">✨</div>
+      <div class="verdict-content">
+        <h3 id="verdictTitle" class="verdict-title">Ready for Diagnostic Testing</h3>
+        <p id="verdictDesc" class="verdict-desc">
+          Scroll your wheel continuously up and down inside the test stage and click buttons to check for rotary encoder bounce and switch chatter double clicks.
+        </p>
+      </div>
+    </div>
+
+    <!-- Real-time Event Telemetry Log -->
+    <div class="log-card">
+      <div class="log-header">
+        <div class="log-title">Live-Telemetrie &amp; Anomalie-Protokoll</div>
+        <span style="font-size:0.75rem; color:var(--text-subtle);">Real-Time Microsecond Precision</span>
+      </div>
+      <div id="eventLogList" class="log-list"></div>
+    </div>
+
+    <!-- Technical Guide & SEO Content Section -->
+    <section class="content-section">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="section-badge">Hardware-Mechanik &amp; Reparatur</span>
+        <h2 class="section-title">Mausrad-Fehler &amp; Schalterprellen im Detail</h2>
+        <p class="section-lead">Erfahren Sie, warum Mausräder rückwärts springen, Mikroschalter ungewollt doppelt klicken und wie Sie Ihre Maus warten.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-card-icon">⚙️</div>
+          <h3>Drehencoder-Rücksprünge</h3>
+          <p>Die meisten Mäuse verwenden mechanische 2-Phasen-Drehencoder. Staub oder oxidiertes Fett auf den Metallkontakten führen zu Signalfehlern, wodurch das Rad in die falsche Richtung springt.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-card-icon">⚡</div>
+          <h3>Schalterprellen (Switch Chatter) & Doppelklicks</h3>
+          <p>Mechanische Taster (Omron, Kailh, Huano) nutzen Blattfedern aus Kupfer. Durch Materialermüdung prellen die Kontakte beim Schließen und lösen ungewollte Mehrfachklicks unterhalb des Debounce-Limits aus.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-card-icon">🎯</div>
+          <h3>Simultaner Dual-Klick (LMB + RMB)</h3>
+          <p>In FPS- und MOBA-Titeln müssen oft Links- und Rechtsklick synchron ausgelöst werden (z. B. Zielen + Schießen). Unser Timer misst die Millisekunden-Genauigkeit Ihrer Doppelklick-Synchronisation.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="faq-section" id="faq">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Häufig gestellte Fragen</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Was verursacht ungewollte Doppelklicks bei Mäusen?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Mechanische Mikroschalter federn beim Schließen nach (Prellen). Mit zunehmendem Alter ermüdet die Metallfeder und die Kontakte oxidieren, wodurch das Prellen länger als die Software-Entprellzeit dauert und Mehrfachklicks entstehen.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Wie kann man einen Doppelklick-Fehler beheben?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>1. Erhöhen Sie die Debounce-Zeit in der Maussoftware (z. B. Logitech G Hub, Razer Synapse) von 4ms auf 8–12ms. 2. Sprühen Sie Kontaktreiniger (z. B. WD-40 Specialist Kontaktspray) in den Mikroschalter und betätigen Sie ihn mehrmals. 3. Tauschen Sie die Schalter gegen langlebige Modelle (TTC Gold, Huano) oder optische Schalter aus.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Warum springt mein Mausrad in die falsche Richtung?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Staub und Fettreste im Drehencoder verhindern einen sauberen Kontakt der Schleifarme, wodurch der Mikrocontroller die Drehrichtung falsch interpretiert.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Was ist die normale Debounce-Zeit bei Gaming-Mäusen?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Gaming-Mäuse nutzen meist 4ms bis 12ms Entprellzeit. Werden zwei Klicks derselben Taste innerhalb von unter 40–80ms registriert, liegt fast immer ein Schalter-Defekt vor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% clientseitiges reines JavaScript. Keine Tracker. Private Hardware-Tests mit minimaler Latenz.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>Eingabe-Diagnose</h4>
+          <ul>
+            <li><a href="index.html">🖱️ Mausrad & Tasten</a></li>
+            <li><a href="cps-test.html">⚡ CPS-Klicktest</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ Leertaste-Test</a></li>
+            <li><a href="polling-rate-test.html">🔄 Polling Rate (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 Tastatur 104</a></li>
+            <li><a href="gamepad-test.html">🎮 Gamepad-Test</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>Display & Medien</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ Reaktionszeit-Test</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ Pixelfehler-Test</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ Bewegungsunschärfe-Test</a></li>
+            <li><a href="microphone-test.html">🎙️ Mikrofon- & Echo-Test</a></li>
+            <li><a href="webcam-test.html">📷 Webcam & FPS-Test</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Rechtliches & Datenschutz</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ Datenschutzerklärung</a></li>
+            <li><a href="../terms-of-service.html">📜 Nutzungsbedingungen</a></li>
+            <li><a href="../about.html">💡 Über uns</a></li>
+            <li><a href="../contact.html">✉️ Kontakt & Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. Alle Rechte vorbehalten.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">Datenschutzerklärung</a>
+          <a href="../terms-of-service.html">Nutzungsbedingungen</a>
+          <a href="../about.html">Über uns</a>
+          <a href="../contact.html">Kontakt & Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

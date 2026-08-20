@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>스페이스바 연타 속도 측정 (Spacebar CPS Test) - 온라인 스페이스 타속 테스트</title>
+  <meta name="description" content="스페이스바를 얼마나 빠르게 연타할 수 있는지 온라인으로 측정하세요. 1초, 5초, 10초, 30초, 60초 스프린트 모드와 실시간 CPS 파형 그래프 제공.">
+  <meta name="keywords" content="스페이스바 연타, spacebar cps test 한국어, 스페이스바 속도 측정, 스페이스바 카운터, spacebar clicker online">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/ko/spacebar-clicker.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/spacebar-clicker.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/spacebar-clicker.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/spacebar-clicker.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/spacebar-clicker.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/spacebar-clicker.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/spacebar-clicker.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/spacebar-clicker.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/spacebar-clicker.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/spacebar-clicker.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/spacebar-clicker.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/spacebar-clicker.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (KO) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> 스크롤 & 버튼</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS 광클 테스트</a></li>
+        <li><a href="spacebar-clicker.html" class="active"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> 스페이스바 연타</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 폴링레이트 (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104키 키보드</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> 게임패드</a></li>
+        
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn">추가 도구 ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ 반응속도 테스트</a>
+            <a href="screen-dead-pixel.html">🖥️ 모니터 불량화소</a>
+            <a href="monitor-motion-blur.html">🏎️ 잔상 & 고스팅</a>
+            <a href="microphone-test.html">🎙️ 마이크 & 에코</a>
+            <a href="webcam-test.html">📷 웹캠 & FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 KO ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB 텔레메트리</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>스페이스바 타속 빈도 &amp; CPS 벤치마크</span>
+      </div>
+      <h1 class="hero-title">스페이스바 연타 속도 측정</h1>
+      <p class="hero-subtitle">
+        키보드의 스페이스바를 연타하거나 아래 영역을 빠르게 클릭하여 연타 속도를 측정하세요.
+      </p>
+    </div>
+
+    <!-- Mode Selector -->
+    <div class="mode-selector-bar">
+      <div class="mode-buttons" id="sbModeGroup">
+        <button class="mode-btn" data-sec="1">1초 단거리</button>
+        <button class="mode-btn active" data-sec="5">5초 표준</button>
+        <button class="mode-btn" data-sec="10">10초 지구력</button>
+        <button class="mode-btn" data-sec="30">30초 마라톤</button>
+      </div>
+
+      <div class="timer-container" id="sbTimerBox">
+        <span>남은 시간: <strong id="sbTimerText" style="color:var(--accent-cyan);">5.0s</strong></span>
+      </div>
+    </div>
+
+    <div class="timer-progress-bar active" style="display:block;">
+      <div id="sbProgressFill" class="timer-progress-fill" style="width:100%;"></div>
+    </div>
+
+    <div class="app-grid">
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="sbResetBtn" class="btn btn-danger">초기화</button>
+          <div style="font-size:0.85rem; color:var(--text-muted);">
+            총 타수: <strong id="sbTotalHits" style="color:var(--text-main); font-family:var(--font-mono);">0</strong>
+          </div>
+        </div>
+
+        <div id="sbStage" class="cps-click-stage" tabindex="0">
+          <div style="font-size:0.85rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem;">
+            SPACE 키를 누르거나 여기를 클릭
+          </div>
+          <div class="cps-huge-value" id="sbLiveDisplay">0.0</div>
+          <div style="font-size:0.85rem; color:var(--text-subtle); margin-top:0.25rem;">
+            초당 타수 (CPS)
+          </div>
+          <div id="sbRankBadge" class="cps-rank-badge">
+            <span>⚡ 연타를 시작하세요</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>최종 CPS</span>
+              <span class="stat-badge">점수</span>
+            </div>
+            <div class="stat-value" id="statFinalCps">0.0</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>1초 최고치</span>
+              <span class="stat-badge">최대</span>
+            </div>
+            <div class="stat-value" id="statPeakCps">0.0</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>평균 간격</span>
+              <span class="stat-badge">ms</span>
+            </div>
+            <div class="stat-value">
+              <span id="statAvgInterval">0</span><span class="stat-unit">ms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-header">
+            <div class="chart-title">실시간 타속 파형 곡선</div>
+          </div>
+          <canvas id="sbWaveCanvas" style="width:100%; height:130px; background:#0d121c; border-radius:var(--radius-sm); display:block;"></canvas>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% 클라이언트 순수 JavaScript 구동. 추적기 없음. 비공개 초저지연 하드웨어 벤치마크.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>입력 장치 진단</h4>
+          <ul>
+            <li><a href="index.html">🖱️ 스크롤 & 버튼</a></li>
+            <li><a href="cps-test.html">⚡ CPS 광클 테스트</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ 스페이스바 연타</a></li>
+            <li><a href="polling-rate-test.html">🔄 폴링레이트 (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104키 키보드</a></li>
+            <li><a href="gamepad-test.html">🎮 게임패드</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>디스플레이 & 미디어</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ 반응속도 테스트</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ 모니터 불량화소</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ 잔상 & 고스팅</a></li>
+            <li><a href="microphone-test.html">🎙️ 마이크 & 에코</a></li>
+            <li><a href="webcam-test.html">📷 웹캠 & FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>약관 및 신뢰</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ 개인정보 처리방침</a></li>
+            <li><a href="../terms-of-service.html">📜 이용약관</a></li>
+            <li><a href="../about.html">💡 소개</a></li>
+            <li><a href="../contact.html">✉️ 문의 및 지원</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. All rights reserved.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">개인정보 처리방침</a>
+          <a href="../terms-of-service.html">이용약관</a>
+          <a href="../about.html">소개</a>
+          <a href="../contact.html">문의 및 지원</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    let modeDuration = 5;
+    let isRunning = false;
+    let isFinished = false;
+    let hitCount = 0;
+    let startTime = 0;
+    let timerInterval = null;
+    let hitTimestamps = [];
+    let cpsHistory = [];
+
+    const stage = document.getElementById('sbStage');
+    const liveDisplay = document.getElementById('sbLiveDisplay');
+    const timerText = document.getElementById('sbTimerText');
+    const progressFill = document.getElementById('sbProgressFill');
+    const totalHitsEl = document.getElementById('sbTotalHits');
+    const finalCpsEl = document.getElementById('statFinalCps');
+    const peakCpsEl = document.getElementById('statPeakCps');
+    const avgIntervalEl = document.getElementById('statAvgInterval');
+    const rankBadge = document.getElementById('sbRankBadge');
+    const resetBtn = document.getElementById('sbResetBtn');
+    const modeBtns = document.querySelectorAll('#sbModeGroup .mode-btn');
+    const canvas = document.getElementById('sbWaveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function resetTest() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      isFinished = false;
+      hitCount = 0;
+      hitTimestamps = [];
+      cpsHistory = [];
+      totalHitsEl.textContent = '0';
+      liveDisplay.textContent = '0.0';
+      timerText.textContent = `${modeDuration.toFixed(1)}s`;
+      progressFill.style.width = '100%';
+      finalCpsEl.textContent = '0.0';
+      peakCpsEl.textContent = '0.0';
+      avgIntervalEl.textContent = '0';
+      rankBadge.innerHTML = '<span>⚡ 연타를 시작하세요</span>';
+    }
+
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeDuration = parseFloat(btn.dataset.sec);
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        resetTest();
+      });
+    });
+
+    resetBtn.addEventListener('click', resetTest);
+
+    function startTest() {
+      isRunning = true;
+      startTime = performance.now();
+      timerInterval = setInterval(() => {
+        const elapsed = (performance.now() - startTime) / 1000;
+        const remaining = Math.max(0, modeDuration - elapsed);
+        timerText.textContent = `${remaining.toFixed(1)}s`;
+        progressFill.style.width = `${(remaining / modeDuration) * 100}%`;
+
+        const currentCps = elapsed > 0 ? (hitCount / elapsed).toFixed(1) : '0.0';
+        liveDisplay.textContent = currentCps;
+        cpsHistory.push(parseFloat(currentCps));
+        drawWave();
+
+        if (remaining <= 0) finishTest();
+      }, 50);
+    }
+
+    function finishTest() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      isFinished = true;
+      timerText.textContent = '0.0s';
+      progressFill.style.width = '0%';
+      const finalCps = (hitCount / modeDuration).toFixed(2);
+      liveDisplay.textContent = finalCps;
+      finalCpsEl.textContent = finalCps;
+
+      let peak = 0;
+      for (let i = 0; i < hitTimestamps.length; i++) {
+        const t = hitTimestamps[i];
+        const within1s = hitTimestamps.filter(x => x >= t && x < t + 1000).length;
+        if (within1s > peak) peak = within1s;
+      }
+      peakCpsEl.textContent = peak.toFixed(1);
+
+      if (hitTimestamps.length > 1) {
+        const intervals = [];
+        for (let i = 1; i < hitTimestamps.length; i++) intervals.push(hitTimestamps[i] - hitTimestamps[i-1]);
+        avgIntervalEl.textContent = (intervals.reduce((a, b) => a + b, 0) / intervals.length).toFixed(1);
+      }
+
+      const cpsNum = parseFloat(finalCps);
+      const rank = cpsNum >= 10 ? '🐆 치타 등급' : (cpsNum >= 8 ? '🦅 매 등급' : (cpsNum >= 6 ? '🐺 늑대 등급' : (cpsNum >= 4 ? '🐰 토끼 등급' : '🐢 거북이 등급')));
+      rankBadge.innerHTML = `<span>등급 판정: ${rank} (${finalCps} CPS)</span>`;
+    }
+
+    function registerHit() {
+      if (isFinished) return;
+      if (!isRunning) startTest();
+
+      const now = performance.now();
+      hitCount++;
+      hitTimestamps.push(now);
+      totalHitsEl.textContent = hitCount;
+
+      const elapsed = (now - startTime) / 1000;
+      const cps = elapsed > 0 ? (hitCount / elapsed).toFixed(1) : '1.0';
+      liveDisplay.textContent = cps;
+    }
+
+    stage.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      registerHit();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        registerHit();
+        stage.classList.add('active');
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      if (e.code === 'Space') {
+        stage.classList.remove('active');
+      }
+    });
+
+    function drawWave() {
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      if (cpsHistory.length < 2) return;
+      const maxPoints = 60;
+      const slice = cpsHistory.slice(-maxPoints);
+      const step = w / (slice.length - 1);
+
+      ctx.beginPath();
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+
+      slice.forEach((cps, i) => {
+        const x = i * step;
+        const normalized = Math.min(1, cps / 16);
+        const y = h - (normalized * (h - 20)) - 10;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+    }
+  })();
+  </script>
+</body>
+</html>

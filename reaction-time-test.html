@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reaction Time Test - Measure Visual Click Reflexes (ms)</title>
+  <meta name="description" content="Test your visual reaction time with microsecond accuracy. Benchmark your reflexes, calculate your 5-trial average, and see where you rank among competitive gamers.">
+  <meta name="keywords" content="reaction time test, reflex test, visual reaction speed, human benchmark reaction, click reflex test, gaming reaction time ms">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/reaction-time-test.html">
+
+  <!-- Theme & Styling -->
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (EN) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> Mouse Scroll Glitch</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS Speed Test</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> Spacebar Clicker</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Polling Rate (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104-Key Keyboard</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> Gamepad Tester</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">More Tools ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html" class="active">⚡ Reaction Time Test</a>
+            <a href="screen-dead-pixel.html">🖥️ Screen Dead Pixel Test</a>
+            <a href="monitor-motion-blur.html">🏎️ Monitor Motion Blur Test</a>
+            <a href="microphone-test.html">🎙️ Microphone Echo & dBFS</a>
+            <a href="webcam-test.html">📷 Webcam Resolution & FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 EN ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">11 Tools Hub</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>High-Precision Visual Reflex Benchmark</span>
+      </div>
+      <h1 class="hero-title">Reaction Time Reflex Test</h1>
+      <p class="hero-subtitle">
+        Click the stage to start. Wait for the red screen to turn <strong>GREEN</strong>, then click as fast as you can.
+      </p>
+    </div>
+
+    <!-- App Grid -->
+    <div class="app-grid">
+      
+      <!-- Interactive Stage -->
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="rxResetBtn" class="btn btn-secondary">Reset Session</button>
+          <div style="font-size:0.85rem; color:var(--text-muted);">
+            Trial: <strong id="rxTrialNumber" style="color:var(--text-main); font-family:var(--font-mono);">0 / 5</strong>
+          </div>
+        </div>
+
+        <div id="rxStage" class="reaction-stage idle" tabindex="0">
+          <div id="rxIcon" style="font-size:3rem; margin-bottom:1rem;">⚡</div>
+          <div id="rxHeadline" style="font-size:1.6rem; font-weight:800; color:#fff; margin-bottom:0.5rem;">Click Anywhere to Start</div>
+          <p id="rxSubtext" style="color:var(--text-muted); font-size:0.95rem; max-width:400px;">
+            When the red box turns bright green, click as fast as possible.
+          </p>
+          <div class="reaction-huge-time" id="rxTimeDisplay" style="display:none;">0 ms</div>
+        </div>
+      </section>
+
+      <!-- Right Column: Scores & Session History -->
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>Last Time</span>
+              <span class="stat-badge">ms</span>
+            </div>
+            <div class="stat-value" id="statLastRx">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Best Trial</span>
+              <span class="stat-badge">Record</span>
+            </div>
+            <div class="stat-value" id="statBestRx">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Average (5-Try)</span>
+              <span class="stat-badge">Mean</span>
+            </div>
+            <div class="stat-value" id="statAvgRx">--</div>
+          </div>
+        </div>
+
+        <!-- Session Trials List -->
+        <div class="log-card" style="height:210px;">
+          <div class="log-header">
+            <div class="log-title">5-Trial History</div>
+          </div>
+          <div class="log-list" id="rxHistoryList">
+            <div style="color:var(--text-subtle); padding:0.5rem;">No completed trials yet. Click the box to begin trial 1.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="./index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% Client-Side Pure JavaScript. Zero external trackers. Private, ultra-low latency hardware testing on Cloudflare Pages.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>Input Diagnostics</h4>
+          <ul>
+            <li><a href="index.html">🖱️ Mouse Scroll Glitch</a></li>
+            <li><a href="cps-test.html">⚡ CPS Speed Test</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ Spacebar Clicker</a></li>
+            <li><a href="polling-rate-test.html">🔄 Polling Rate (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104-Key Keyboard</a></li>
+            <li><a href="gamepad-test.html">🎮 Gamepad Tester</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>Display & Media</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ Reaction Time Test</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ Screen Dead Pixel Test</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ Monitor Motion Blur Test</a></li>
+            <li><a href="microphone-test.html">🎙️ Microphone Echo & dBFS</a></li>
+            <li><a href="webcam-test.html">📷 Webcam Resolution & FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="./privacy-policy.html">🛡️ Privacy Policy</a></li>
+            <li><a href="./terms-of-service.html">📜 Terms of Service</a></li>
+            <li><a href="./about.html">💡 About Us</a></li>
+            <li><a href="./contact.html">✉️ Contact & Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. All rights reserved.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="./privacy-policy.html">Privacy Policy</a>
+          <a href="./terms-of-service.html">Terms of Service</a>
+          <a href="./about.html">About Us</a>
+          <a href="./contact.html">Contact & Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reaction Time Engine Script -->
+  <script>
+  (function() {
+    let state = 'idle';
+    let greenStartTime = 0;
+    let waitTimeout = null;
+    let trials = [];
+
+    const stage = document.getElementById('rxStage');
+    const icon = document.getElementById('rxIcon');
+    const headline = document.getElementById('rxHeadline');
+    const subtext = document.getElementById('rxSubtext');
+    const timeDisplay = document.getElementById('rxTimeDisplay');
+    const trialNum = document.getElementById('rxTrialNumber');
+    const statLast = document.getElementById('statLastRx');
+    const statBest = document.getElementById('statBestRx');
+    const statAvg = document.getElementById('statAvgRx');
+    const historyList = document.getElementById('rxHistoryList');
+    const resetBtn = document.getElementById('rxResetBtn');
+
+    function resetAll() {
+      clearTimeout(waitTimeout);
+      state = 'idle';
+      trials = [];
+      stage.className = 'reaction-stage idle';
+      icon.textContent = '⚡';
+      headline.textContent = 'Click Anywhere to Start';
+      subtext.textContent = 'When the red box turns bright green, click as fast as possible.';
+      timeDisplay.style.display = 'none';
+      trialNum.textContent = '0 / 5';
+      statLast.textContent = '--';
+      statBest.textContent = '--';
+      statAvg.textContent = '--';
+      historyList.innerHTML = '<div style="color:var(--text-subtle); padding:0.5rem;">No completed trials yet. Click the box to begin trial 1.</div>';
+    }
+
+    resetBtn.addEventListener('click', resetAll);
+
+    function startWaiting() {
+      state = 'waiting';
+      stage.className = 'reaction-stage waiting';
+      icon.textContent = '🛑';
+      headline.textContent = 'Wait for GREEN...';
+      subtext.textContent = 'Do not click yet!';
+      timeDisplay.style.display = 'none';
+
+      const delay = 1500 + Math.random() * 3000;
+      waitTimeout = setTimeout(() => {
+        state = 'ready';
+        stage.className = 'reaction-stage ready';
+        icon.textContent = '🟢';
+        headline.textContent = 'CLICK NOW!';
+        subtext.textContent = 'Fast!';
+        greenStartTime = performance.now();
+      }, delay);
+    }
+
+    stage.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+
+      if (state === 'idle') {
+        startWaiting();
+      } else if (state === 'waiting') {
+        clearTimeout(waitTimeout);
+        state = 'idle';
+        stage.className = 'reaction-stage early';
+        icon.textContent = '⚠️';
+        headline.textContent = 'Too Early!';
+        subtext.textContent = 'You clicked before the box turned green. Click anywhere to try again.';
+      } else if (state === 'ready') {
+        const reactionTime = Math.round(performance.now() - greenStartTime);
+        trials.push(reactionTime);
+        state = 'result';
+        stage.className = 'reaction-stage result';
+        icon.textContent = '🏆';
+        headline.textContent = `${reactionTime} ms`;
+        subtext.textContent = 'Click anywhere to continue to next trial.';
+        
+        statLast.textContent = `${reactionTime} ms`;
+        const best = Math.min(...trials);
+        statBest.textContent = `${best} ms`;
+        const avg = Math.round(trials.reduce((a,b)=>a+b,0) / trials.length);
+        statAvg.textContent = `${avg} ms`;
+
+        trialNum.textContent = `${trials.length} / 5`;
+
+        historyList.innerHTML = trials.map((t, idx) => `
+          <div class="log-row normal">
+            <span>Trial #${idx + 1}</span>
+            <strong style="color:${t < 200 ? 'var(--accent-emerald)' : 'var(--text-main)'};">${t} ms</strong>
+          </div>
+        `).join('');
+
+        if (trials.length >= 5) {
+          subtext.textContent = `Completed 5-trial benchmark! 5-Trial Mean: ${avg} ms. Click to restart session.`;
+          trials = [];
+        }
+      } else if (state === 'result') {
+        startWaiting();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- English Core & Companion Suite (Root) -->
+  <url>
+    <loc>https://mousetester.pages.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/cps-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/cps-test.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/cps-test.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/keyboard-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/keyboard-test.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/keyboard-test.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/gamepad-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/gamepad-test.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/gamepad-test.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/spacebar-clicker.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/spacebar-clicker.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/spacebar-clicker.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/polling-rate-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/polling-rate-test.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/polling-rate-test.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/reaction-time-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/reaction-time-test.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/reaction-time-test.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/screen-dead-pixel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/screen-dead-pixel.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/screen-dead-pixel.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/monitor-motion-blur.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/monitor-motion-blur.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/monitor-motion-blur.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/microphone-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/microphone-test.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/microphone-test.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/webcam-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/webcam-test.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/webcam-test.html" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ES Subdirectory (/es/) -->
+  <url><loc>https://mousetester.pages.dev/es/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/es/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- DE Subdirectory (/de/) -->
+  <url><loc>https://mousetester.pages.dev/de/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/de/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- FR Subdirectory (/fr/) -->
+  <url><loc>https://mousetester.pages.dev/fr/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/fr/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- IT Subdirectory (/it/) -->
+  <url><loc>https://mousetester.pages.dev/it/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/it/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- JA Subdirectory (/ja/) -->
+  <url><loc>https://mousetester.pages.dev/ja/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ja/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- ZH Subdirectory (/zh/) -->
+  <url><loc>https://mousetester.pages.dev/zh/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/zh/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- KO Subdirectory (/ko/) -->
+  <url><loc>https://mousetester.pages.dev/ko/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/ko/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- HI Subdirectory (/hi/) -->
+  <url><loc>https://mousetester.pages.dev/hi/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/hi/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- NL Subdirectory (/nl/) -->
+  <url><loc>https://mousetester.pages.dev/nl/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/cps-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/keyboard-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/gamepad-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/spacebar-clicker.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/polling-rate-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/reaction-time-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/screen-dead-pixel.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/monitor-motion-blur.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/microphone-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mousetester.pages.dev/nl/webcam-test.html</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Compliance & Trust Pages -->
+  <url>
+    <loc>https://mousetester.pages.dev/privacy-policy.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/terms-of-service.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/about.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mousetester.pages.dev/contact.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

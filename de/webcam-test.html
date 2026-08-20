@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Webcam-Test Online - Auflösung, FPS &amp; Spiegelung Prüfen</title>
+  <meta name="description" content="Testen Sie Ihre Webcam online. Überprüfen Sie die tatsächliche Videoauflösung (1080p, 720p, 4K), Bildwiederholrate (FPS) und Bildqualität. 100% privat im Browser.">
+  <meta name="keywords" content="webcam test online deutsch, kamera testen online, webcam auflösung prüfen, webcam fps test, web camera test privat">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/de/webcam-test.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/webcam-test.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/webcam-test.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/webcam-test.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/webcam-test.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/webcam-test.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/webcam-test.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/webcam-test.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/webcam-test.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/webcam-test.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/webcam-test.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/webcam-test.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (DE) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> Mausrad & Tasten</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS-Klicktest</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> Leertaste-Test</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Polling Rate (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> Tastatur 104</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> Gamepad-Test</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">Mehr Tools ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ Reaktionszeit-Test</a>
+            <a href="screen-dead-pixel.html">🖥️ Pixelfehler-Test</a>
+            <a href="monitor-motion-blur.html">🏎️ Bewegungsunschärfe-Test</a>
+            <a href="microphone-test.html">🎙️ Mikrofon- & Echo-Test</a>
+            <a href="webcam-test.html" class="active">📷 Webcam & FPS-Test</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 DE ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB-Telemetrie</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>HTML5-Webcam-Diagnose und FPS-Messung</span>
+      </div>
+      <h1 class="hero-title">Webcam-Test &amp; Auflösungs-Check</h1>
+      <p class="hero-subtitle">
+        Testen Sie Ihre Kamera auf Auflösung, Bildwiederholrate (FPS), Spiegelfunktion und erfassen Sie Testfotos direkt im Browser.
+      </p>
+    </div>
+
+    <div class="app-grid">
+      <section class="glass-panel">
+        <div class="control-bar">
+          <div class="toolbar-group">
+            <button id="startCamBtn" class="btn btn-cyan">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              Kamera aktivieren
+            </button>
+            <button id="stopCamBtn" class="btn btn-danger" style="display:none;">⏹️ Kamera Stoppen</button>
+            <button id="snapPhotoBtn" class="btn btn-secondary" disabled>
+              📸 Foto aufnehmen
+            </button>
+          </div>
+
+          <div class="toolbar-group">
+            <label class="toggle-switch">
+              <span>Spiegelmodus</span>
+              <input type="checkbox" id="mirrorToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="webcam-preview-box">
+          <video id="webcamVideo" class="webcam-video" autoplay playsinline muted></video>
+          <div id="camOverlay" class="webcam-overlay" style="display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center;">
+              <div style="font-size:3rem; margin-bottom:1rem;">📷</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#fff; margin-bottom:0.5rem;">Kamera deaktiviert</div>
+              <p style="color:var(--text-muted); font-size:0.85rem; max-width:320px; margin:0 auto;">
+                Klicken Sie auf "Kamera aktivieren", um die Browserberechtigung zu erteilen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label"><span>Auflösung</span><span class="stat-badge">Pixel</span></div>
+            <div class="stat-value" id="statCamRes">-- x --</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>Bildrate</span><span class="stat-badge">FPS</span></div>
+            <div class="stat-value" id="statCamFps">--</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>Seitenverhältnis</span><span class="stat-badge">Ratio</span></div>
+            <div class="stat-value" id="statCamAspect">--</div>
+          </div>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <div class="guide-card-icon">🔒</div>
+          <h3>100% Datenschutz</h3>
+          <p id="camVerdict" style="margin-bottom:0;">Ihr Videostream verlässt niemals Ihren Browser. Die Verarbeitung erfolgt vollständig lokal.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% clientseitiges reines JavaScript. Keine Tracker. Private Hardware-Tests mit minimaler Latenz.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>Eingabe-Diagnose</h4>
+          <ul>
+            <li><a href="index.html">🖱️ Mausrad & Tasten</a></li>
+            <li><a href="cps-test.html">⚡ CPS-Klicktest</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ Leertaste-Test</a></li>
+            <li><a href="polling-rate-test.html">🔄 Polling Rate (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 Tastatur 104</a></li>
+            <li><a href="gamepad-test.html">🎮 Gamepad-Test</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>Display & Medien</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ Reaktionszeit-Test</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ Pixelfehler-Test</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ Bewegungsunschärfe-Test</a></li>
+            <li><a href="microphone-test.html">🎙️ Mikrofon- & Echo-Test</a></li>
+            <li><a href="webcam-test.html">📷 Webcam & FPS-Test</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Rechtliches & Datenschutz</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ Datenschutzerklärung</a></li>
+            <li><a href="../terms-of-service.html">📜 Nutzungsbedingungen</a></li>
+            <li><a href="../about.html">💡 Über uns</a></li>
+            <li><a href="../contact.html">✉️ Kontakt & Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. Alle Rechte vorbehalten.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">Datenschutzerklärung</a>
+          <a href="../terms-of-service.html">Nutzungsbedingungen</a>
+          <a href="../about.html">Über uns</a>
+          <a href="../contact.html">Kontakt & Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    let stream = null;
+    let isRunning = false;
+    let fpsCount = 0;
+    let lastFpsTime = performance.now();
+
+    const video = document.getElementById('webcamVideo');
+    const startBtn = document.getElementById('startCamBtn');
+    const snapBtn = document.getElementById('snapPhotoBtn');
+    const mirrorToggle = document.getElementById('mirrorToggle');
+    const overlay = document.getElementById('camOverlay');
+
+    const resLabel = document.getElementById('statCamRes');
+    const fpsLabel = document.getElementById('statCamFps');
+    const aspectLabel = document.getElementById('statCamAspect');
+    const verdict = document.getElementById('camVerdict');
+
+    mirrorToggle.addEventListener('change', () => {
+      video.style.transform = mirrorToggle.checked ? 'scaleX(-1)' : 'none';
+    });
+
+    async function startCamera() {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 1920 }, height: { ideal: 1080 } }
+        });
+        video.srcObject = stream;
+        isRunning = true;
+        overlay.style.display = 'none';
+        startBtn.textContent = '⏹️ Kamera stoppen';
+        startBtn.classList.remove('btn-cyan');
+        startBtn.classList.add('btn-danger');
+        snapBtn.disabled = false;
+        verdict.textContent = 'Webcam überträgt mit Hardwarebeschleunigung.';
+
+        video.onloadedmetadata = () => {
+          const w = video.videoWidth;
+          const h = video.videoHeight;
+          resLabel.textContent = `${w} x ${h}`;
+          const gcd = (a, b) => b ? gcd(b, a % b) : a;
+          const d = gcd(w, h);
+          aspectLabel.textContent = `${w/d}:${h/d}`;
+        };
+
+        trackFps();
+      } catch (err) {
+        verdict.textContent = 'Fehler beim Zugriff auf die Webcam. Bitte Berechtigungen prüfen.';
+      }
+    }
+
+    function stopCamera() {
+      if (stream) {
+        stream.getTracks().forEach(t => t.stop());
+        video.srcObject = null;
+      }
+      isRunning = false;
+      overlay.style.display = 'flex';
+      startBtn.textContent = 'Kamera aktivieren';
+      startBtn.classList.remove('btn-danger');
+      startBtn.classList.add('btn-cyan');
+      snapBtn.disabled = true;
+      resLabel.textContent = '-- x --';
+      fpsLabel.textContent = '--';
+      aspectLabel.textContent = '--';
+      verdict.textContent = 'Kamera gestoppt.';
+    }
+
+    startBtn.addEventListener('click', () => {
+      if (!isRunning) startCamera();
+      else stopCamera();
+    });
+
+    function trackFps() {
+      if (!isRunning) return;
+      fpsCount++;
+      const now = performance.now();
+      if (now - lastFpsTime >= 1000) {
+        fpsLabel.textContent = `${fpsCount} FPS`;
+        fpsCount = 0;
+        lastFpsTime = now;
+      }
+      if ('requestVideoFrameCallback' in video) {
+        video.requestVideoFrameCallback(trackFps);
+      } else {
+        requestAnimationFrame(trackFps);
+      }
+    }
+
+    snapBtn.addEventListener('click', () => {
+      if (!isRunning) return;
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext('2d');
+      if (mirrorToggle.checked) {
+        ctx.translate(canvas.width, 0);
+        ctx.scale(-1, 1);
+      }
+      ctx.drawImage(video, 0, 0);
+      const link = document.createElement('a');
+      link.download = `webcam_aufnahme_${Date.now()}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  })();
+  </script>
+</body>
+</html>

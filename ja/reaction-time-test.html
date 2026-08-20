@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>反応速度テスト - 視覚反射神経＆クリック速度測定 (ms)</title>
+  <meta name="description" content="マイクロ秒精度の高精度視覚反射神経測定ツール。赤から緑に変わる瞬間にクリックして、5回の平均反応速度（ミリ秒）やゲーマーランクを計測します。">
+  <meta name="keywords" content="反応速度テスト, 反射神経テスト, クリック反応速度, reaction time test 日本語, 反射速度測定 ms">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/ja/reaction-time-test.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/reaction-time-test.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/reaction-time-test.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/reaction-time-test.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/reaction-time-test.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/reaction-time-test.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/reaction-time-test.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/reaction-time-test.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/reaction-time-test.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/reaction-time-test.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/reaction-time-test.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/reaction-time-test.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (JA) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> スクロール＆ボタン</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS連打テスト</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> スペース連打</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ポーリングレート (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> キーボード 104</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> ゲームパッド</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">その他ツール ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html" class="active">⚡ 反応速度テスト</a>
+            <a href="screen-dead-pixel.html">🖥️ ドット抜け・画面テスト</a>
+            <a href="monitor-motion-blur.html">🏎️ 残像・ゴーストテスト</a>
+            <a href="microphone-test.html">🎙️ マイク＆エコーテスト</a>
+            <a href="webcam-test.html">📷 Webカメラ＆FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 JA ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB テレメトリ</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>高精度視覚反射神経ベンチマーク</span>
+      </div>
+      <h1 class="hero-title">反応速度・反射神経テスト</h1>
+      <p class="hero-subtitle">
+        エリアをクリックして開始します。赤い画面が<strong>緑色</strong>に変わったら、できるだけ素早くクリックしてください。
+      </p>
+    </div>
+
+    <div class="app-grid">
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="rxResetBtn" class="btn btn-secondary">リセット</button>
+          <div style="font-size:0.85rem; color:var(--text-muted);">
+            試行回数: <strong id="rxTrialNumber" style="color:var(--text-main); font-family:var(--font-mono);">0 / 5</strong>
+          </div>
+        </div>
+
+        <div id="rxStage" class="reaction-stage idle" tabindex="0">
+          <div id="rxIcon" style="font-size:3rem; margin-bottom:1rem;">⚡</div>
+          <div id="rxHeadline" style="font-size:1.6rem; font-weight:800; color:#fff; margin-bottom:0.5rem;">クリックして開始</div>
+          <p id="rxSubtext" style="color:var(--text-muted); font-size:0.95rem; max-width:400px;">
+            ボックスが緑色に変わったら、最速でクリックしてください。
+          </p>
+          <div class="reaction-huge-time" id="rxTimeDisplay" style="display:none;">0 ms</div>
+        </div>
+      </section>
+
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>前回のタイム</span>
+              <span class="stat-badge">ms</span>
+            </div>
+            <div class="stat-value" id="statLastRx">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>最速タイム</span>
+              <span class="stat-badge">記録</span>
+            </div>
+            <div class="stat-value" id="statBestRx">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>平均タイム (5回)</span>
+              <span class="stat-badge">平均</span>
+            </div>
+            <div class="stat-value" id="statAvgRx">--</div>
+          </div>
+        </div>
+
+        <div class="log-card" style="height:210px;">
+          <div class="log-header">
+            <div class="log-title">5回の試行履歴</div>
+          </div>
+          <div class="log-list" id="rxHistoryList">
+            <div style="color:var(--text-subtle); padding:0.5rem;">履歴はありません。ボックスをクリックして開始してください。</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            完全クライアントサイド動作。トラッカーなし。超低遅延でセキュアな周辺機器ベンチマーク環境。
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>入力デバイス診断</h4>
+          <ul>
+            <li><a href="index.html">🖱️ スクロール＆ボタン</a></li>
+            <li><a href="cps-test.html">⚡ CPS連打テスト</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ スペース連打</a></li>
+            <li><a href="polling-rate-test.html">🔄 ポーリングレート (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 キーボード 104</a></li>
+            <li><a href="gamepad-test.html">🎮 ゲームパッド</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>画面＆メディア検証</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ 反応速度テスト</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ ドット抜け・画面テスト</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ 残像・ゴーストテスト</a></li>
+            <li><a href="microphone-test.html">🎙️ マイク＆エコーテスト</a></li>
+            <li><a href="webcam-test.html">📷 Webカメラ＆FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>規約とポリシー</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ プライバシーポリシー</a></li>
+            <li><a href="../terms-of-service.html">📜 利用規約</a></li>
+            <li><a href="../about.html">💡 当サイトについて</a></li>
+            <li><a href="../contact.html">✉️ お問い合わせ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. 無断転載を禁じます。</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">プライバシーポリシー</a>
+          <a href="../terms-of-service.html">利用規約</a>
+          <a href="../about.html">当サイトについて</a>
+          <a href="../contact.html">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    let state = 'idle';
+    let greenStartTime = 0;
+    let waitTimeout = null;
+    let trials = [];
+
+    const stage = document.getElementById('rxStage');
+    const icon = document.getElementById('rxIcon');
+    const headline = document.getElementById('rxHeadline');
+    const subtext = document.getElementById('rxSubtext');
+    const timeDisplay = document.getElementById('rxTimeDisplay');
+    const trialNum = document.getElementById('rxTrialNumber');
+    const statLast = document.getElementById('statLastRx');
+    const statBest = document.getElementById('statBestRx');
+    const statAvg = document.getElementById('statAvgRx');
+    const historyList = document.getElementById('rxHistoryList');
+    const resetBtn = document.getElementById('rxResetBtn');
+
+    function resetAll() {
+      clearTimeout(waitTimeout);
+      state = 'idle';
+      trials = [];
+      stage.className = 'reaction-stage idle';
+      icon.textContent = '⚡';
+      headline.textContent = 'クリックして開始';
+      subtext.textContent = 'ボックスが緑色に変わったら、最速でクリックしてください。';
+      timeDisplay.style.display = 'none';
+      trialNum.textContent = '0 / 5';
+      statLast.textContent = '--';
+      statBest.textContent = '--';
+      statAvg.textContent = '--';
+      historyList.innerHTML = '<div style="color:var(--text-subtle); padding:0.5rem;">履歴はありません。ボックスをクリックして開始してください。</div>';
+    }
+
+    resetBtn.addEventListener('click', resetAll);
+
+    function startWaiting() {
+      state = 'waiting';
+      stage.className = 'reaction-stage waiting';
+      icon.textContent = '🛑';
+      headline.textContent = '緑色になるまで待機...';
+      subtext.textContent = 'まだクリックしないでください！';
+      timeDisplay.style.display = 'none';
+
+      const delay = 1500 + Math.random() * 3000;
+      waitTimeout = setTimeout(() => {
+        state = 'ready';
+        stage.className = 'reaction-stage ready';
+        icon.textContent = '🟢';
+        headline.textContent = '今すぐクリック！';
+        subtext.textContent = '素早く！';
+        greenStartTime = performance.now();
+      }, delay);
+    }
+
+    stage.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+
+      if (state === 'idle') {
+        startWaiting();
+      } else if (state === 'waiting') {
+        clearTimeout(waitTimeout);
+        state = 'idle';
+        stage.className = 'reaction-stage early';
+        icon.textContent = '⚠️';
+        headline.textContent = 'フライング！';
+        subtext.textContent = '緑色になる前にクリックしました。クリックしてやり直してください。';
+      } else if (state === 'ready') {
+        const reactionTime = Math.round(performance.now() - greenStartTime);
+        trials.push(reactionTime);
+        state = 'result';
+        stage.className = 'reaction-stage result';
+        icon.textContent = '🏆';
+        headline.textContent = `${reactionTime} ms`;
+        subtext.textContent = 'クリックして次の試行に進みます。';
+        
+        statLast.textContent = `${reactionTime} ms`;
+        const best = Math.min(...trials);
+        statBest.textContent = `${best} ms`;
+        const avg = Math.round(trials.reduce((a,b)=>a+b,0) / trials.length);
+        statAvg.textContent = `${avg} ms`;
+
+        trialNum.textContent = `${trials.length} / 5`;
+
+        historyList.innerHTML = trials.map((t, idx) => `
+          <div class="log-row normal">
+            <span>第${idx + 1}回</span>
+            <strong style="color:${t < 200 ? 'var(--accent-emerald)' : 'var(--text-main)'};">${t} ms</strong>
+          </div>
+        `).join('');
+
+        if (trials.length >= 5) {
+          subtext.textContent = `5回の測定完了！ 平均タイム: ${avg} ms。クリックして再挑戦。`;
+          trials = [];
+        }
+      } else if (state === 'result') {
+        startWaiting();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Microphone Test Online - Check Mic Audio Levels, dBFS & Echo Playback</title>
+  <meta name="description" content="Test your microphone online with live dBFS volume meters, real-time frequency oscilloscope, and instant 5-second local echo playback test. 100% private in browser.">
+  <meta name="keywords" content="microphone test, test mic online, mic volume meter dbfs, mic echo test, check microphone sound, mic frequency visualizer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/microphone-test.html">
+
+  <!-- Theme & Styling -->
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (EN) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> Mouse Scroll Glitch</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS Speed Test</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> Spacebar Clicker</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Polling Rate (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104-Key Keyboard</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> Gamepad Tester</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">More Tools ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ Reaction Time Test</a>
+            <a href="screen-dead-pixel.html">🖥️ Screen Dead Pixel Test</a>
+            <a href="monitor-motion-blur.html">🏎️ Monitor Motion Blur Test</a>
+            <a href="microphone-test.html" class="active">🎙️ Microphone Echo & dBFS</a>
+            <a href="webcam-test.html">📷 Webcam Resolution & FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 EN ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">11 Tools Hub</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>Real-Time Web Audio API Input Diagnostic</span>
+      </div>
+      <h1 class="hero-title">Microphone Test &amp; Echo Playback</h1>
+      <p class="hero-subtitle">
+        Check your microphone volume levels, monitor peak clipping in dBFS, visualize frequency spectrum, and perform a 5-second audio playback test.
+      </p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="app-grid">
+      
+      <!-- Interactive Mic Stage -->
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="startMicBtn" class="btn btn-cyan">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            Enable Microphone
+          </button>
+            <button id="stopMicBtn" class="btn btn-danger" style="display:none;">⏹️ Stop Microphone</button>
+          <button id="echoRecordBtn" class="btn btn-secondary" disabled>
+            🎙️ Record 5s Echo Test
+          </button>
+        </div>
+
+        <div style="margin-bottom:1.5rem;">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">
+            <span>Input Volume Level (dBFS)</span>
+            <span id="dbfsValue" style="color:var(--accent-cyan); font-family:var(--font-mono);">-&infin; dBFS</span>
+          </div>
+          <div class="mic-meter-track">
+            <div id="micMeterFill" class="mic-meter-fill"></div>
+          </div>
+        </div>
+
+        <!-- Frequency Spectrum Oscilloscope Canvas -->
+        <div class="chart-container" style="margin-bottom:1.5rem;">
+          <div class="chart-header">
+            <div class="chart-title">Live Frequency Spectrum</div>
+          </div>
+          <canvas id="micSpectrumCanvas" style="width:100%; height:130px; background:#0d121c; border-radius:var(--radius-sm); display:block;"></canvas>
+        </div>
+
+        <!-- Echo Audio Playback Area -->
+        <div id="echoPlaybackBox" style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1rem; text-align:center;">
+          <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.5rem;" id="echoStatusText">Click "Record 5s Echo Test" to hear your voice</div>
+          <audio id="echoAudio" controls style="width:100%; display:none;"></audio>
+        </div>
+      </section>
+
+      <!-- Right Column: Status & Tech Specs -->
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>Peak Volume</span>
+              <span class="stat-badge">Max</span>
+            </div>
+            <div class="stat-value" id="statPeakVol">0%</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Sample Rate</span>
+              <span class="stat-badge">Hz</span>
+            </div>
+            <div class="stat-value" id="statSampleRate">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Channel Count</span>
+              <span class="stat-badge">Audio</span>
+            </div>
+            <div class="stat-value" id="statChannels">--</div>
+          </div>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <div class="guide-card-icon">🔒</div>
+          <h3>100% Private &amp; Client-Side</h3>
+          <p>Your audio stream is processed directly on your device using HTML5 Web Audio API. No voice data or recordings are ever transmitted over the network.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="./index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% Client-Side Pure JavaScript. Zero external trackers. Private, ultra-low latency hardware testing on Cloudflare Pages.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>Input Diagnostics</h4>
+          <ul>
+            <li><a href="index.html">🖱️ Mouse Scroll Glitch</a></li>
+            <li><a href="cps-test.html">⚡ CPS Speed Test</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ Spacebar Clicker</a></li>
+            <li><a href="polling-rate-test.html">🔄 Polling Rate (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104-Key Keyboard</a></li>
+            <li><a href="gamepad-test.html">🎮 Gamepad Tester</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>Display & Media</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ Reaction Time Test</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ Screen Dead Pixel Test</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ Monitor Motion Blur Test</a></li>
+            <li><a href="microphone-test.html">🎙️ Microphone Echo & dBFS</a></li>
+            <li><a href="webcam-test.html">📷 Webcam Resolution & FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="./privacy-policy.html">🛡️ Privacy Policy</a></li>
+            <li><a href="./terms-of-service.html">📜 Terms of Service</a></li>
+            <li><a href="./about.html">💡 About Us</a></li>
+            <li><a href="./contact.html">✉️ Contact & Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. All rights reserved.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="./privacy-policy.html">Privacy Policy</a>
+          <a href="./terms-of-service.html">Terms of Service</a>
+          <a href="./about.html">About Us</a>
+          <a href="./contact.html">Contact & Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Microphone Engine Script -->
+  <script>
+  (function() {
+    let audioCtx = null;
+    let analyser = null;
+    let micStream = null;
+    let isRecording = false;
+    let mediaRecorder = null;
+    let audioChunks = [];
+
+    const startBtn = document.getElementById('startMicBtn');
+
+    const stopBtn = document.getElementById('stopMicBtn');
+
+    function stopMicrophone() {
+      if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+      }
+      if (audioCtx) {
+        try { audioCtx.close(); } catch(e) {}
+        audioCtx = null;
+      }
+      analyser = null;
+      startBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg> Enable Microphone';
+      startBtn.classList.remove('btn-secondary');
+      startBtn.classList.add('btn-cyan');
+      if (stopBtn) stopBtn.style.display = 'none';
+      echoBtn.disabled = true;
+      meterFill.style.width = '0%';
+      dbfsLabel.textContent = '-Infinity dBFS';
+      peakVolEl.textContent = '0%';
+      sampleRateEl.textContent = '--';
+      channelsEl.textContent = '--';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    if (stopBtn) stopBtn.addEventListener('click', stopMicrophone);
+    const echoBtn = document.getElementById('echoRecordBtn');
+    const dbfsLabel = document.getElementById('dbfsValue');
+    const meterFill = document.getElementById('micMeterFill');
+    const peakVolEl = document.getElementById('statPeakVol');
+    const sampleRateEl = document.getElementById('statSampleRate');
+    const channelsEl = document.getElementById('statChannels');
+    const echoStatus = document.getElementById('echoStatusText');
+    const echoAudio = document.getElementById('echoAudio');
+    const canvas = document.getElementById('micSpectrumCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    startBtn.addEventListener('click', async () => {
+      try {
+        micStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+
+        const source = audioCtx.createMediaStreamSource(micStream);
+        source.connect(analyser);
+
+        startBtn.textContent = '✅ Microphone Active';
+        startBtn.classList.remove('btn-cyan');
+        startBtn.classList.add('btn-secondary');
+        if (stopBtn) stopBtn.style.display = 'inline-flex';
+        echoBtn.disabled = false;
+
+        sampleRateEl.textContent = `${audioCtx.sampleRate / 1000} kHz`;
+        channelsEl.textContent = '1 (Mono)';
+
+        drawMeter();
+      } catch(err) {
+        alert(`Microphone permission error: ${err.message}`);
+      }
+    });
+
+    let peakPercent = 0;
+
+    function drawMeter() {
+      if (!analyser) return;
+
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      analyser.getByteFrequencyData(dataArray);
+
+      let sum = 0;
+      for (let i = 0; i < bufferLength; i++) sum += dataArray[i];
+      const avg = sum / bufferLength;
+      const percent = Math.min(100, Math.round((avg / 128) * 100));
+
+      if (percent > peakPercent) {
+        peakPercent = percent;
+        peakVolEl.textContent = `${peakPercent}%`;
+      }
+
+      meterFill.style.width = `${percent}%`;
+      const dbfs = percent > 0 ? (20 * Math.log10(percent / 100)).toFixed(1) : '-60.0';
+      dbfsLabel.textContent = `${dbfs} dBFS`;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const barWidth = (canvas.width / bufferLength) * 2;
+      let x = 0;
+
+      for (let i = 0; i < bufferLength; i++) {
+        const barHeight = (dataArray[i] / 255) * canvas.height;
+        ctx.fillStyle = `hsl(${180 + i * 2}, 90%, 55%)`;
+        ctx.fillRect(x, canvas.height - barHeight, barWidth - 1, barHeight);
+        x += barWidth;
+      }
+
+      requestAnimationFrame(drawMeter);
+    }
+
+    echoBtn.addEventListener('click', () => {
+      if (!micStream || isRecording) return;
+      isRecording = true;
+      audioChunks = [];
+      mediaRecorder = new MediaRecorder(micStream);
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) audioChunks.push(e.data);
+      };
+
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+        const audioUrl = URL.createObjectURL(audioBlob);
+        echoAudio.src = audioUrl;
+        echoAudio.style.display = 'block';
+        echoAudio.play();
+        echoStatus.textContent = '▶️ Playing back your 5-second echo recording';
+        echoBtn.textContent = '🎙️ Record 5s Echo Test';
+        isRecording = false;
+      };
+
+      mediaRecorder.start();
+      let timeLeft = 5;
+      echoStatus.textContent = `🔴 Recording voice: ${timeLeft}s remaining...`;
+      echoBtn.textContent = `Recording (${timeLeft}s)...`;
+
+      const countdown = setInterval(() => {
+        timeLeft--;
+        if (timeLeft > 0) {
+          echoStatus.textContent = `🔴 Recording voice: ${timeLeft}s remaining...`;
+          echoBtn.textContent = `Recording (${timeLeft}s)...`;
+        } else {
+          clearInterval(countdown);
+          mediaRecorder.stop();
+        }
+      }, 1000);
+    });
+  })();
+  </script>
+</body>
+</html>

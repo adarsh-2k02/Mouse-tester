@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Webcam Test Online - Check Camera Resolution, FPS & Mirror Video</title>
+  <meta name="description" content="Test your webcam online. Check delivered video resolution (1080p, 720p, 4K), monitor live frame rate (FPS), adjust mirror view, and capture test photos. 100% private.">
+  <meta name="keywords" content="webcam test, test camera online, check webcam resolution, webcam fps tester, webcam mirror test, test web camera private">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/webcam-test.html">
+
+  <!-- Theme & Styling -->
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme-i18n.js"></script>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://mousetester.pages.dev/webcam-test.html#webapp",
+        "name": "Online Webcam & Resolution Tester",
+        "url": "https://mousetester.pages.dev/webcam-test.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "description": "High resolution online camera diagnostic tool verifying delivered video resolution, live frame rate FPS, and camera sensor clarity."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mousetester.pages.dev/webcam-test.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is my webcam video streamed or saved anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The camera stream connects directly between your local camera hardware and the browser HTML5 video element. No video frames are ever recorded or uploaded."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+    <!-- Top Navigation Hub (EN) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> Mouse Scroll Glitch</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS Speed Test</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> Spacebar Clicker</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Polling Rate (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104-Key Keyboard</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> Gamepad Tester</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">More Tools ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ Reaction Time Test</a>
+            <a href="screen-dead-pixel.html">🖥️ Screen Dead Pixel Test</a>
+            <a href="monitor-motion-blur.html">🏎️ Monitor Motion Blur Test</a>
+            <a href="microphone-test.html">🎙️ Microphone Echo & dBFS</a>
+            <a href="webcam-test.html" class="active">📷 Webcam Resolution & FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 EN ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">11 Tools Hub</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>HTML5 Camera Stream &amp; Resolution Diagnostic</span>
+      </div>
+      <h1 class="hero-title">Webcam &amp; Resolution Test</h1>
+      <p class="hero-subtitle">
+        Verify your camera video stream, inspect delivered resolution (1080p, 720p, 4K), track frame rate FPS, and capture test snapshots.
+      </p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="app-grid">
+      
+      <!-- Interactive Camera Stage -->
+      <section class="glass-panel">
+        <div class="control-bar">
+          <div class="toolbar-group">
+            <button id="startCamBtn" class="btn btn-cyan">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              Enable Camera
+            </button>
+            <button id="stopCamBtn" class="btn btn-danger" style="display:none;">⏹️ Stop Camera</button>
+            <button id="snapBtn" class="btn btn-secondary" disabled>
+              📸 Take Photo
+            </button>
+          </div>
+
+          <div class="toolbar-group">
+            <button id="mirrorToggleBtn" class="btn btn-secondary" style="font-size:0.8rem;">
+              ↔️ Toggle Mirror
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Viewport Container with Centered Alignment Overlay -->
+        <div class="webcam-viewport-container">
+          <video id="webcamVideo" class="webcam-video" autoplay playsinline muted></video>
+          
+          <div id="camPlaceholder" class="webcam-overlay-center">
+            <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📷</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem;">Camera Preview Inactive</div>
+            <div style="color: var(--text-muted); font-size: 0.9rem; max-width: 320px; line-height: 1.5; margin-bottom: 1.25rem;">
+              Click the button below to grant permission and start the live stream.
+            </div>
+            <button id="startCamOverlayBtn" class="btn btn-cyan" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+              Enable Camera Now
+            </button>
+          </div>
+
+          <div id="camHudBadge" class="webcam-hud-badge" style="display:none;">
+            <span id="camResLabel">0 x 0</span> | <span id="camFpsLabel">0 FPS</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Camera Telemetry & Info -->
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>Delivered Res</span>
+              <span class="stat-badge">Pixels</span>
+            </div>
+            <div class="stat-value" id="statCamRes">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Frame Rate</span>
+              <span class="stat-badge">FPS</span>
+            </div>
+            <div class="stat-value" id="statCamFps">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Aspect Ratio</span>
+              <span class="stat-badge">Format</span>
+            </div>
+            <div class="stat-value" id="statAspectRatio">--</div>
+          </div>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <div class="guide-card-icon">🔒</div>
+          <h3>Local Device Security</h3>
+          <p>This camera test runs 100% locally in your web browser. Video streams are rendered directly to HTML5 canvas memory without any cloud processing.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- SEO Content Section -->
+    <section class="content-section">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="section-badge">Camera Optimization</span>
+        <h2 class="section-title">How to Improve Your Webcam Video Quality</h2>
+        <p class="section-lead">Fix blurry camera output, low frame rates in low light, and auto-exposure flickering.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-card-icon">💡</div>
+          <h3>Lighting &amp; Exposure</h3>
+          <p>Webcam sensors are small and struggle in dim lighting. Place a warm soft key light in front of your face to eliminate digital sensor noise.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">🔌</div>
+          <h3>USB 3.0 Bandwidth</h3>
+          <p>High resolution 1080p60 and 4K webcams require dedicated USB 3.0/3.1 ports. Avoid sharing USB hubs with external hard drives.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">🎯</div>
+          <h3>Auto-Focus Hunting</h3>
+          <p>If your webcam constantly focuses back and forth, disable continuous autofocus in your camera software and set manual focal distance.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="./index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% Client-Side Pure JavaScript. Zero external trackers. Private, ultra-low latency hardware testing on Cloudflare Pages.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>Input Diagnostics</h4>
+          <ul>
+            <li><a href="index.html">🖱️ Mouse Scroll Glitch</a></li>
+            <li><a href="cps-test.html">⚡ CPS Speed Test</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ Spacebar Clicker</a></li>
+            <li><a href="polling-rate-test.html">🔄 Polling Rate (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104-Key Keyboard</a></li>
+            <li><a href="gamepad-test.html">🎮 Gamepad Tester</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>Display & Media</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ Reaction Time Test</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ Screen Dead Pixel Test</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ Monitor Motion Blur Test</a></li>
+            <li><a href="microphone-test.html">🎙️ Microphone Echo & dBFS</a></li>
+            <li><a href="webcam-test.html">📷 Webcam Resolution & FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="./privacy-policy.html">🛡️ Privacy Policy</a></li>
+            <li><a href="./terms-of-service.html">📜 Terms of Service</a></li>
+            <li><a href="./about.html">💡 About Us</a></li>
+            <li><a href="./contact.html">✉️ Contact & Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. All rights reserved.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="./privacy-policy.html">Privacy Policy</a>
+          <a href="./terms-of-service.html">Terms of Service</a>
+          <a href="./about.html">About Us</a>
+          <a href="./contact.html">Contact & Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Webcam Engine Script -->
+  <script>
+  (function() {
+    let camStream = null;
+    let isMirrored = true;
+    let frameCount = 0;
+    let lastFpsTime = performance.now();
+
+    const video = document.getElementById('webcamVideo');
+    const startBtn = document.getElementById('startCamBtn');
+    const startOverlayBtn = document.getElementById('startCamOverlayBtn');
+    const snapBtn = document.getElementById('snapBtn');
+    const mirrorBtn = document.getElementById('mirrorToggleBtn');
+    const placeholder = document.getElementById('camPlaceholder');
+    const hudBadge = document.getElementById('camHudBadge');
+    const resLabel = document.getElementById('camResLabel');
+    const fpsLabel = document.getElementById('camFpsLabel');
+    const statRes = document.getElementById('statCamRes');
+    const statFps = document.getElementById('statCamFps');
+    const statAspect = document.getElementById('statAspectRatio');
+
+    async function initCamera() {
+      try {
+        camStream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 1920 }, height: { ideal: 1080 } },
+          audio: false
+        });
+
+        video.srcObject = camStream;
+        placeholder.style.display = 'none';
+        hudBadge.style.display = 'block';
+        startBtn.textContent = '✅ Camera Active';
+        startBtn.classList.remove('btn-cyan');
+        startBtn.classList.add('btn-secondary');
+        if (stopBtn) stopBtn.style.display = 'inline-flex';
+        snapBtn.disabled = false;
+
+        video.addEventListener('loadedmetadata', () => {
+          const w = video.videoWidth;
+          const h = video.videoHeight;
+          resLabel.textContent = `${w} x ${h}`;
+          statRes.textContent = `${w}x${h}`;
+
+          const ratio = (w / h).toFixed(2);
+          statAspect.textContent = ratio === '1.78' ? '16:9 HD' : (ratio === '1.33' ? '4:3' : `${ratio}:1`);
+        });
+
+        trackFps();
+      } catch(err) {
+        alert(`Camera access error: ${err.message}`);
+      }
+    }
+
+    startBtn.addEventListener('click', initCamera);
+
+    const stopBtn = document.getElementById('stopCamBtn');
+
+    function stopCamera() {
+      if (camStream) {
+        camStream.getTracks().forEach(track => track.stop());
+        camStream = null;
+      }
+      if (video) {
+        video.srcObject = null;
+      }
+      placeholder.style.display = 'flex';
+      hudBadge.style.display = 'none';
+      startBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> Enable Camera';
+      startBtn.classList.remove('btn-secondary');
+      startBtn.classList.add('btn-cyan');
+      if (stopBtn) stopBtn.style.display = 'none';
+      snapBtn.disabled = true;
+      resLabel.textContent = '0 x 0';
+      fpsLabel.textContent = '0 FPS';
+      statRes.textContent = '--';
+      statFps.textContent = '--';
+      statAspect.textContent = '--';
+    }
+
+    if (stopBtn) stopBtn.addEventListener('click', stopCamera);
+    if (startOverlayBtn) startOverlayBtn.addEventListener('click', initCamera);
+
+    function trackFps() {
+      if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
+        function onFrame() {
+          frameCount++;
+          const now = performance.now();
+          if (now - lastFpsTime >= 1000) {
+            fpsLabel.textContent = `${frameCount} FPS`;
+            statFps.textContent = `${frameCount} FPS`;
+            frameCount = 0;
+            lastFpsTime = now;
+          }
+          video.requestVideoFrameCallback(onFrame);
+        }
+        video.requestVideoFrameCallback(onFrame);
+      } else {
+        statFps.textContent = '30-60 FPS';
+      }
+    }
+
+    mirrorBtn.addEventListener('click', () => {
+      isMirrored = !isMirrored;
+      video.style.transform = isMirrored ? 'scaleX(-1)' : 'scaleX(1)';
+    });
+
+    snapBtn.addEventListener('click', () => {
+      if (!camStream) return;
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext('2d');
+
+      if (isMirrored) {
+        ctx.translate(canvas.width, 0);
+        ctx.scale(-1, 1);
+      }
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      const link = document.createElement('a');
+      link.download = `webcam-photo-${new Date().toISOString().slice(0, 10)}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>온라인 마이크 테스트 - 음량 레벨 dBFS 및 에코 녹음 확인</title>
+  <meta name="description" content="웹 브라우저에서 마이크 입력 볼륨을 실시간 dBFS 미터로 확인하세요. 주파수 스펙트럼 시각화 및 5초 에코 녹음 재생 테스트 기능 지원. 100% 개인정보 보호.">
+  <meta name="keywords" content="마이크 테스트 온라인, 마이크 소리 확인, 마이크 dbfs 측정, 마이크 에코 테스트 한국어, 마이크 주파수 검사">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/ko/microphone-test.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/microphone-test.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/microphone-test.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/microphone-test.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/microphone-test.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/microphone-test.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/microphone-test.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/microphone-test.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/microphone-test.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/microphone-test.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/microphone-test.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/microphone-test.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (KO) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> 스크롤 & 버튼</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS 광클 테스트</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> 스페이스바 연타</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 폴링레이트 (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104키 키보드</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> 게임패드</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">추가 도구 ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ 반응속도 테스트</a>
+            <a href="screen-dead-pixel.html">🖥️ 모니터 불량화소</a>
+            <a href="monitor-motion-blur.html">🏎️ 잔상 & 고스팅</a>
+            <a href="microphone-test.html" class="active">🎙️ 마이크 & 에코</a>
+            <a href="webcam-test.html">📷 웹캠 & FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 KO ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB 텔레메트리</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>Web Audio API 실시간 마이크 진단</span>
+      </div>
+      <h1 class="hero-title">마이크 테스트 &amp; 에코 확인</h1>
+      <p class="hero-subtitle">
+        마이크 입력 음량, dBFS 피크 클리핑, 주파수 스펙트럼을 모니터링하고 5초 에코 녹음으로 음질을 확인하세요.
+      </p>
+    </div>
+
+    <div class="app-grid">
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="startMicBtn" class="btn btn-cyan">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            마이크 활성화
+          </button>
+            <button id="stopMicBtn" class="btn btn-danger" style="display:none;">⏹️ 마이크 중지</button>
+          <button id="echoRecordBtn" class="btn btn-secondary" disabled>
+            🎙️ 5초 에코 녹음 테스트
+          </button>
+        </div>
+
+        <div style="margin-bottom:1.5rem;">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">
+            <span>입력 볼륨 레벨 (dBFS)</span>
+            <span id="dbfsLabel" style="color:var(--accent-cyan); font-family:var(--font-mono);">-Infinity dBFS</span>
+          </div>
+          <div class="trigger-meter-track" style="height:14px; background:var(--bg-tertiary);">
+            <div id="micVolumeBar" class="trigger-meter-fill" style="width:0%; transition:width 0.05s ease;"></div>
+          </div>
+        </div>
+
+        <div class="chart-container" style="margin-bottom:0;">
+          <div class="chart-header">
+            <div class="chart-title">오디오 주파수 스펙트럼</div>
+          </div>
+          <canvas id="micFreqCanvas" style="width:100%; height:140px; background:#0d121c; border-radius:var(--radius-sm); display:block;"></canvas>
+        </div>
+      </section>
+
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label"><span>최고 볼륨</span><span class="stat-badge">dBFS</span></div>
+            <div class="stat-value" id="statPeakDbfs">--</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>주요 주파수</span><span class="stat-badge">Hz</span></div>
+            <div class="stat-value" id="statDominantHz">--</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>샘플레이트</span><span class="stat-badge">kHz</span></div>
+            <div class="stat-value" id="statSampleRate">--</div>
+          </div>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <div class="guide-card-icon">🎙️</div>
+          <h3>마이크 상태 진단</h3>
+          <p id="micVerdict" style="margin-bottom:0;">"마이크 활성화"를 클릭하여 브라우저 권한을 허용하세요.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% 클라이언트 순수 JavaScript 구동. 추적기 없음. 비공개 초저지연 하드웨어 벤치마크.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>입력 장치 진단</h4>
+          <ul>
+            <li><a href="index.html">🖱️ 스크롤 & 버튼</a></li>
+            <li><a href="cps-test.html">⚡ CPS 광클 테스트</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ 스페이스바 연타</a></li>
+            <li><a href="polling-rate-test.html">🔄 폴링레이트 (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104키 키보드</a></li>
+            <li><a href="gamepad-test.html">🎮 게임패드</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>디스플레이 & 미디어</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ 반응속도 테스트</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ 모니터 불량화소</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ 잔상 & 고스팅</a></li>
+            <li><a href="microphone-test.html">🎙️ 마이크 & 에코</a></li>
+            <li><a href="webcam-test.html">📷 웹캠 & FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>약관 및 신뢰</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ 개인정보 처리방침</a></li>
+            <li><a href="../terms-of-service.html">📜 이용약관</a></li>
+            <li><a href="../about.html">💡 소개</a></li>
+            <li><a href="../contact.html">✉️ 문의 및 지원</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. All rights reserved.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">개인정보 처리방침</a>
+          <a href="../terms-of-service.html">이용약관</a>
+          <a href="../about.html">소개</a>
+          <a href="../contact.html">문의 및 지원</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    let audioCtx = null;
+    let analyser = null;
+    let microphone = null;
+    let isMicActive = false;
+    let mediaRecorder = null;
+    let audioChunks = [];
+
+    const startBtn = document.getElementById('startMicBtn');
+
+    const stopBtn = document.getElementById('stopMicBtn');
+
+    function stopMicrophone() {
+      if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+      }
+      if (audioCtx) {
+        try { audioCtx.close(); } catch(e) {}
+        audioCtx = null;
+      }
+      analyser = null;
+      startBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg> Enable Microphone';
+      startBtn.classList.remove('btn-secondary');
+      startBtn.classList.add('btn-cyan');
+      if (stopBtn) stopBtn.style.display = 'none';
+      echoBtn.disabled = true;
+      meterFill.style.width = '0%';
+      dbfsLabel.textContent = '-Infinity dBFS';
+      peakVolEl.textContent = '0%';
+      sampleRateEl.textContent = '--';
+      channelsEl.textContent = '--';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    if (stopBtn) stopBtn.addEventListener('click', stopMicrophone);
+    const echoBtn = document.getElementById('echoRecordBtn');
+    const volumeBar = document.getElementById('micVolumeBar');
+    const dbfsLabel = document.getElementById('dbfsLabel');
+    const peakDbfsEl = document.getElementById('statPeakDbfs');
+    const dominantHzEl = document.getElementById('statDominantHz');
+    const sampleRateEl = document.getElementById('statSampleRate');
+    const micVerdict = document.getElementById('micVerdict');
+    const canvas = document.getElementById('micFreqCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    async function initMic() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+
+        microphone = audioCtx.createMediaStreamSource(stream);
+        microphone.connect(analyser);
+
+        isMicActive = true;
+        startBtn.textContent = '⏹️ 마이크 비활성화';
+        startBtn.classList.remove('btn-cyan');
+        startBtn.classList.add('btn-danger');
+        echoBtn.disabled = false;
+        sampleRateEl.textContent = `${(audioCtx.sampleRate / 1000).toFixed(1)} kHz`;
+        micVerdict.textContent = '마이크가 활성화되었습니다. 말을 하여 볼륨과 주파수를 확인하세요.';
+
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = (e) => audioChunks.push(e.data);
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(audioChunks, { type: 'audio/webm' });
+          audioChunks = [];
+          const audioUrl = URL.createObjectURL(blob);
+          const audio = new Audio(audioUrl);
+          audio.play();
+          echoBtn.textContent = '▶️ 에코 재생 중...';
+          audio.onended = () => {
+            echoBtn.textContent = '🎙️ 5초 에코 녹음 테스트';
+            echoBtn.disabled = false;
+          };
+        };
+
+        drawVisualizer();
+      } catch (err) {
+        micVerdict.textContent = '마이크 접근에 실패했습니다. 브라우저 권한을 확인해주세요.';
+      }
+    }
+
+    startBtn.addEventListener('click', () => {
+      if (!isMicActive) {
+        initMic();
+      } else {
+        if (audioCtx) audioCtx.close();
+        isMicActive = false;
+        startBtn.textContent = '마이크 활성화';
+        startBtn.classList.remove('btn-danger');
+        startBtn.classList.add('btn-cyan');
+        echoBtn.disabled = true;
+        volumeBar.style.width = '0%';
+        dbfsLabel.textContent = '-Infinity dBFS';
+        micVerdict.textContent = '마이크가 정지되었습니다.';
+      }
+    });
+
+    echoBtn.addEventListener('click', () => {
+      if (!mediaRecorder || mediaRecorder.state === 'recording') return;
+      audioChunks = [];
+      mediaRecorder.start();
+      echoBtn.textContent = '🔴 녹음 중 (5초)...';
+      echoBtn.disabled = true;
+
+      setTimeout(() => {
+        if (mediaRecorder.state === 'recording') mediaRecorder.stop();
+      }, 5000);
+    });
+
+    function drawVisualizer() {
+      if (!isMicActive) return;
+      requestAnimationFrame(drawVisualizer);
+
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      analyser.getByteFrequencyData(dataArray);
+
+      let sum = 0;
+      let maxVal = 0;
+      let maxIdx = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        sum += dataArray[i];
+        if (dataArray[i] > maxVal) {
+          maxVal = dataArray[i];
+          maxIdx = i;
+        }
+      }
+      const avg = sum / bufferLength;
+      const pct = Math.min(100, Math.round((avg / 128) * 100));
+      volumeBar.style.width = `${pct}%`;
+
+      const dbfs = avg > 0 ? Math.round(20 * Math.log10(avg / 255)) : -100;
+      dbfsLabel.textContent = `${dbfs} dBFS`;
+      peakDbfsEl.textContent = `${dbfs} dBFS`;
+
+      const dominantHz = Math.round(maxIdx * (audioCtx.sampleRate / analyser.fftSize));
+      dominantHzEl.textContent = `${dominantHz} Hz`;
+
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const barWidth = (w / bufferLength) * 1.5;
+      let x = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        const barHeight = (dataArray[i] / 255) * (h - 10);
+        ctx.fillStyle = `hsl(${180 + (i * 2)}, 90%, 50%)`;
+        ctx.fillRect(x, h - barHeight, barWidth - 1, barHeight);
+        x += barWidth;
+      }
+    }
+  })();
+  </script>
+</body>
+</html>

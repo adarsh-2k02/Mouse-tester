@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Test Polling Rate Mouse (Hz Checker) - Frequenza USB & Jitter</title>
+  <meta name="description" content="Misura il polling rate USB (125Hz fino a 8000Hz) del mouse con acquisizione hardware ad alta frequenza senza limitazione dello schermo.">
+  <meta name="keywords" content="test polling rate mouse, test hz mouse, frequenza usb mouse, test mouse 1000hz, test 8000hz mouse, jitter usb">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/it/polling-rate-test.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/polling-rate-test.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/polling-rate-test.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/polling-rate-test.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/polling-rate-test.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/polling-rate-test.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/polling-rate-test.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/polling-rate-test.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/polling-rate-test.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/polling-rate-test.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/polling-rate-test.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/polling-rate-test.html">
+
+  <!-- Theme & Styling -->
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+
+  <!-- Main Container -->
+    <!-- Top Navigation Hub (IT) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> Rotella & Pulsanti</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Test CPS</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> Barra Spaziatrice</a></li>
+        <li><a href="polling-rate-test.html" class="active"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Polling Rate (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> Tastiera 104</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> Controller Gamepad</a></li>
+        
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn">Altri Strumenti ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ Test Tempo di Reazione</a>
+            <a href="screen-dead-pixel.html">🖥️ Test Pixel Bruciati</a>
+            <a href="monitor-motion-blur.html">🏎️ Test Sfocatura Movimento</a>
+            <a href="microphone-test.html">🎙️ Test Microfono ed Eco</a>
+            <a href="webcam-test.html">📷 Test Webcam e FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 IT ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">Telemetria USB</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>Tracciatore di Frequenza USB ad Alta Precisione (Eventi Hardware Coalesced)</span>
+      </div>
+      <h1 class="hero-title">Test Polling Rate Mouse (Hz)</h1>
+      <p class="hero-subtitle">
+        Muovi rapidamente il mouse in cerchio nell'area di test. Utilizza eventi hardware non limitati dal vsync (60Hz/144Hz) per misurare la frequenza USB reale, picco e jitter.
+      </p>
+    </div>
+
+    <!-- Mode Selector & Timed Benchmark Runner -->
+    <div class="mode-selector-bar">
+      <div class="mode-buttons" id="hzModeGroup">
+        <button class="mode-btn active" data-duration="0">Modalità Continua</button>
+        <button class="mode-btn" data-duration="5">Benchmark 5s</button>
+        <button class="mode-btn" data-duration="10">Benchmark 10s</button>
+        <button class="mode-btn" data-duration="15">Resistenza 15s</button>
+      </div>
+
+      <div class="timer-container" id="hzTimerBox">
+        <span id="hzTimerLabel">Flusso Live</span>
+      </div>
+    </div>
+
+    <div class="timer-progress-bar active" id="hzProgressBar" style="display:none; margin-bottom:1.5rem;">
+      <div id="hzProgressFill" class="timer-progress-fill" style="width:100%;"></div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="app-grid">
+      
+      <!-- Left: Interactive Sweep Area -->
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="hzResetBtn" class="btn btn-danger">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+            Reimposta
+          </button>
+          <div style="font-size:0.85rem; color:var(--text-muted);">
+            Pacchetti campionati: <strong id="hzTotalEvents" style="color:var(--text-main); font-family:var(--font-mono);">0</strong>
+          </div>
+        </div>
+
+        <div id="hzSweepStage" class="hz-sweep-stage" tabindex="0">
+          <div class="hz-sweep-top-label">
+            AREA DI MOVIMENTO CONTINUO
+          </div>
+          
+          <div class="hz-sweep-center">
+            <div class="hz-huge-number" id="hzLiveDisplay">0 <span>Hz</span></div>
+            <div id="usbClassPill" class="usb-class-pill">
+              <span>Muovi il mouse in cerchio per rilevare il livello</span>
+            </div>
+          </div>
+
+          <div class="hz-sweep-bottom-label">
+            FLUSSO DI EVENTI AD ALTA RISOLUZIONE (NON LIMITATO)
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Detailed Telemetry & Oscillation Wave -->
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>Polling Medio</span>
+              <span class="stat-badge">Stabile</span>
+            </div>
+            <div class="stat-value"><span id="statAvgHz">0</span><span class="stat-unit">Hz</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Frequenza di Picco</span>
+              <span class="stat-badge">Max</span>
+            </div>
+            <div class="stat-value"><span id="statPeakHz">0</span><span class="stat-unit">Hz</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Intervallo Pacchetti</span>
+              <span class="stat-badge">Timing</span>
+            </div>
+            <div class="stat-value"><span id="statAvgInterval">0.00</span><span class="stat-unit">ms</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Deviazione Jitter</span>
+              <span class="stat-badge">± σ</span>
+            </div>
+            <div class="stat-value"><span id="statJitter">0.00</span><span class="stat-unit">ms</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Intervallo Obiettivo</span>
+              <span class="stat-badge">Spec. USB</span>
+            </div>
+            <div class="stat-value" id="statTargetInterval">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>Stabilità Segnale</span>
+              <span class="stat-badge">Punteggio</span>
+            </div>
+            <div class="stat-value" id="statStability">--</div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-header">
+            <div class="chart-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              Flusso Frequenza Polling Rate in Tempo Reale
+            </div>
+          </div>
+          <canvas id="hzWaveCanvas" style="width:100%; height:160px; background:#0d121c; border-radius:var(--radius-sm); display:block;"></canvas>
+        </div>
+      </section>
+    </div>
+
+    <!-- Polling Rate Tiers & Information Section -->
+    <section class="glass-panel" style="margin-top: 2rem;">
+      <h2 style="font-size:1.35rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Comprendere le Classi di Polling Rate del Mouse</h2>
+      <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.5rem;">Il polling rate del mouse (in Hz) indica quanti report al secondo vengono inviati al computer.</p>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem;">
+        <div style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1rem;">
+          <div style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.35rem;">125 Hz (Intervallo 8.0ms)</div>
+          <div style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;">Predefinito per il 95% dei mouse da ufficio e Bluetooth per massimizzare la batteria.</div>
+        </div>
+
+        <div style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1rem;">
+          <div style="font-weight:700; color:#818cf8; margin-bottom:0.35rem;">500 Hz (Intervallo 2.0ms)</div>
+          <div style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;">Base comune per mouse da gaming casual.</div>
+        </div>
+
+        <div style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1rem;">
+          <div style="font-weight:700; color:#c084fc; margin-bottom:0.35rem;">1000 Hz (Intervallo 1.0ms)</div>
+          <div style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;">Lo standard di riferimento per gli esports (Logitech G, Razer, Zowie).</div>
+        </div>
+
+        <div style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1rem;">
+          <div style="font-weight:700; color:#f43f5e; margin-bottom:0.35rem;">4000 Hz - 8000 Hz (0.25ms - 0.125ms)</div>
+          <div style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;">Mouse hyper-polling per display da 240Hz, 360Hz e 540Hz.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% puro JavaScript client-side. Nessun tracciatore. Test hardware privati a bassissima latenza.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>Diagnostica di Input</h4>
+          <ul>
+            <li><a href="index.html">🖱️ Rotella & Pulsanti</a></li>
+            <li><a href="cps-test.html">⚡ Test CPS</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ Barra Spaziatrice</a></li>
+            <li><a href="polling-rate-test.html">🔄 Polling Rate (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 Tastiera 104</a></li>
+            <li><a href="gamepad-test.html">🎮 Controller Gamepad</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>Display e Multimedia</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ Test Tempo di Reazione</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ Test Pixel Bruciati</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ Test Sfocatura Movimento</a></li>
+            <li><a href="microphone-test.html">🎙️ Test Microfono ed Eco</a></li>
+            <li><a href="webcam-test.html">📷 Test Webcam e FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Legale e Privacy</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ Informativa sulla Privacy</a></li>
+            <li><a href="../terms-of-service.html">📜 Termini di Servizio</a></li>
+            <li><a href="../about.html">💡 Chi Siamo</a></li>
+            <li><a href="../contact.html">✉️ Contatti e Supporto</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. Tutti i diritti riservati.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">Informativa sulla Privacy</a>
+          <a href="../terms-of-service.html">Termini di Servizio</a>
+          <a href="../about.html">Chi Siamo</a>
+          <a href="../contact.html">Contatti e Supporto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Polling Rate Engine Script -->
+  <script>
+  (function() {
+    let modeDuration = 0; // 0 = continuous
+    let isTiming = false;
+    let isFinished = false;
+    let timerStartTime = 0;
+    let timerInterval = null;
+
+    let eventCount = 0;
+    let peakHz = 0;
+    let lastPacketTime = 0;
+    
+    // Rolling packet buffer for microsecond frequency analysis
+    let packetTimestamps = []; // sliding 150ms window
+    let allIntervals = [];     // for full test summary
+    let deltaBuffer = [];      // last 50 deltas for jitter
+    let hzHistory = [];        // for live waveform
+
+    const sweepStage = document.getElementById('hzSweepStage');
+    const liveDisplay = document.getElementById('hzLiveDisplay');
+    const usbClassPill = document.getElementById('usbClassPill');
+    const totalEventsEl = document.getElementById('hzTotalEvents');
+    const avgHzEl = document.getElementById('statAvgHz');
+    const peakHzEl = document.getElementById('statPeakHz');
+    const avgIntervalEl = document.getElementById('statAvgInterval');
+    const jitterEl = document.getElementById('statJitter');
+    const targetIntervalEl = document.getElementById('statTargetInterval');
+    const stabilityEl = document.getElementById('statStability');
+    const resetBtn = document.getElementById('hzResetBtn');
+    
+    const modeBtns = document.querySelectorAll('#hzModeGroup .mode-btn');
+    const timerLabel = document.getElementById('hzTimerLabel');
+    const progressBar = document.getElementById('hzProgressBar');
+    const progressFill = document.getElementById('hzProgressFill');
+
+    const canvas = document.getElementById('hzWaveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(rect.width * dpr);
+      canvas.height = Math.floor(rect.height * dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function classifyHz(hz) {
+      if (hz >= 6000) return { label: '🚀 Classe 8000 Hz (Hyper-Polling Ultra)', target: '0.125 ms' };
+      if (hz >= 3000) return { label: '⚡ Classe 4000 Hz (Hyper-Polling Pro)', target: '0.25 ms' };
+      if (hz >= 1500) return { label: '⚡ Classe 2000 Hz (Gaming Professionale)', target: '0.50 ms' };
+      if (hz >= 750) return { label: '🎮 Classe 1000 Hz (Standard Gaming Esports)', target: '1.00 ms' };
+      if (hz >= 380) return { label: '💼 Classe 500 Hz (Gaming Casual)', target: '2.00 ms' };
+      if (hz >= 190) return { label: '🔋 Classe 250 Hz (Wireless Eco)', target: '4.00 ms' };
+      return { label: '🔋 Classe 125 Hz (Mouse Ufficio Standard / Bluetooth)', target: '8.00 ms' };
+    }
+
+    function resetTest() {
+      clearInterval(timerInterval);
+      isTiming = false;
+      isFinished = false;
+      eventCount = 0;
+      peakHz = 0;
+      lastPacketTime = 0;
+      packetTimestamps = [];
+      allIntervals = [];
+      deltaBuffer = [];
+      hzHistory = [];
+
+      totalEventsEl.textContent = '0';
+      liveDisplay.innerHTML = '0 <span>Hz</span>';
+      usbClassPill.innerHTML = '<span>Muovi il mouse in cerchio per rilevare il livello</span>';
+      avgHzEl.textContent = '0';
+      peakHzEl.textContent = '0';
+      avgIntervalEl.textContent = '0.00';
+      jitterEl.textContent = '0.00';
+      targetIntervalEl.textContent = '--';
+      stabilityEl.textContent = '--';
+
+      if (modeDuration > 0) {
+        timerLabel.innerHTML = 'Rimanente: <strong style="color:var(--accent-cyan);">' + modeDuration.toFixed(1) + 's</strong>';
+        progressBar.style.display = 'block';
+        progressFill.style.width = '100%';
+      } else {
+        timerLabel.textContent = 'Flusso Live';
+        progressBar.style.display = 'none';
+      }
+    }
+
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeDuration = parseFloat(btn.dataset.duration);
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        resetTest();
+      });
+    });
+
+    resetBtn.addEventListener('click', resetTest);
+
+    function startTimedRun() {
+      isTiming = true;
+      timerStartTime = performance.now();
+      timerInterval = setInterval(() => {
+        const elapsed = (performance.now() - timerStartTime) / 1000;
+        const remaining = Math.max(0, modeDuration - elapsed);
+        timerLabel.innerHTML = 'Rimanente: <strong style="color:var(--accent-cyan);">' + remaining.toFixed(1) + 's</strong>';
+        progressFill.style.width = (remaining / modeDuration * 100) + '%';
+
+        if (remaining <= 0) {
+          finishTimedRun();
+        }
+      }, 40);
+    }
+
+    function finishTimedRun() {
+      clearInterval(timerInterval);
+      isTiming = false;
+      isFinished = true;
+      timerLabel.innerHTML = 'Rimanente: <strong style="color:var(--accent-emerald);">0.0s</strong>';
+      progressFill.style.width = '0%';
+
+      if (allIntervals.length > 5) {
+        const validDeltas = allIntervals.filter(d => d > 0 && d < 200);
+        if (validDeltas.length > 0) {
+          const avgDelta = validDeltas.reduce((a, b) => a + b, 0) / validDeltas.length;
+          const finalHz = Math.round(1000 / avgDelta);
+          const variance = validDeltas.reduce((acc, v) => acc + Math.pow(v - avgDelta, 2), 0) / validDeltas.length;
+          const finalJitter = Math.sqrt(variance);
+
+          liveDisplay.innerHTML = finalHz + ' <span>Hz</span>';
+          avgHzEl.textContent = finalHz;
+          avgIntervalEl.textContent = avgDelta.toFixed(2);
+          jitterEl.textContent = finalJitter.toFixed(2);
+
+          const cls = classifyHz(finalHz);
+          usbClassPill.innerHTML = '<span>' + '🏆 Test Completato: ' + cls.label + ' (' + 'Jitter: ±' + finalJitter.toFixed(2) + 'ms)</span>';
+        }
+      }
+    }
+
+    // Professional Coalesced PointerEvent Ingestion Engine
+    function processPointerPacket(e) {
+      if (isFinished) return;
+
+      const subEvents = (typeof e.getCoalescedEvents === 'function') ? e.getCoalescedEvents() : [e];
+      const now = performance.now();
+
+      if (modeDuration > 0 && !isTiming && eventCount > 2) {
+        startTimedRun();
+      }
+
+      for (let i = 0; i < subEvents.length; i++) {
+        eventCount++;
+        const pTime = subEvents[i].timeStamp || now;
+        packetTimestamps.push(pTime);
+
+        if (lastPacketTime > 0) {
+          const delta = pTime - lastPacketTime;
+          if (delta > 0 && delta < 200) {
+            deltaBuffer.push(delta);
+            allIntervals.push(delta);
+            if (deltaBuffer.length > 60) deltaBuffer.shift();
+          }
+        }
+        lastPacketTime = pTime;
+      }
+
+      // Calculate sliding-window Frequency (180ms rolling window)
+      const windowCutoff = now - 180;
+      while (packetTimestamps.length > 0 && packetTimestamps[0] < windowCutoff) {
+        packetTimestamps.shift();
+      }
+
+      if (packetTimestamps.length >= 4) {
+        const windowSpanMs = packetTimestamps[packetTimestamps.length - 1] - packetTimestamps[0];
+        if (windowSpanMs > 15) {
+          const rawHz = Math.round(((packetTimestamps.length - 1) / windowSpanMs) * 1000);
+          
+          if (rawHz > 0 && rawHz < 12000) {
+            if (rawHz > peakHz) {
+              peakHz = rawHz;
+            }
+
+            let avgDelta = 1000 / rawHz;
+            let jitterStdDev = 0;
+            if (deltaBuffer.length > 2) {
+              const meanD = deltaBuffer.reduce((a, b) => a + b, 0) / deltaBuffer.length;
+              avgDelta = meanD;
+              const variance = deltaBuffer.reduce((acc, v) => acc + Math.pow(v - meanD, 2), 0) / deltaBuffer.length;
+              jitterStdDev = Math.sqrt(variance);
+            }
+
+            liveDisplay.innerHTML = rawHz + ' <span>Hz</span>';
+            totalEventsEl.textContent = eventCount.toLocaleString();
+            avgHzEl.textContent = rawHz;
+            peakHzEl.textContent = peakHz;
+            avgIntervalEl.textContent = avgDelta.toFixed(2);
+            jitterEl.textContent = jitterStdDev.toFixed(2);
+
+            const cls = classifyHz(rawHz);
+            if (!isFinished) {
+              usbClassPill.innerHTML = '<span>' + cls.label + '</span>';
+            }
+            targetIntervalEl.textContent = cls.target;
+
+            const stabilityScore = jitterStdDev < 0.35 ? '99% (Eccellente)' : (jitterStdDev < 0.8 ? '95% (Buono)' : '85% (Moderato)');
+            stabilityEl.textContent = stabilityScore;
+
+            hzHistory.push(rawHz);
+            if (hzHistory.length > 100) hzHistory.shift();
+          }
+        }
+      }
+    }
+
+    sweepStage.addEventListener('pointermove', processPointerPacket, { passive: true });
+
+    sweepStage.addEventListener('pointerleave', () => {
+      lastPacketTime = 0;
+    });
+
+    // Continuous 60fps/144fps/240fps Waveform Render Loop
+    function renderWave() {
+      requestAnimationFrame(renderWave);
+
+      const dpr = window.devicePixelRatio || 1;
+      const w = canvas.width;
+      const h = canvas.height;
+      if (w === 0 || h === 0) return;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // 1. Draw Grid Lines & Hz Scale Markers
+      const maxScale = Math.max(1200, peakHz * 1.15);
+      const gridFrequencies = [125, 500, 1000, 2000, 4000, 8000].filter(f => f < maxScale * 0.95);
+
+      ctx.font = Math.round(10 * dpr) + 'px "JetBrains Mono", monospace';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+
+      gridFrequencies.forEach(hz => {
+        const y = h - (hz / maxScale) * (h - 24 * dpr) - 12 * dpr;
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+        ctx.lineWidth = 1 * dpr;
+        ctx.setLineDash([4 * dpr, 4 * dpr]);
+        ctx.beginPath();
+        ctx.moveTo(48 * dpr, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+        ctx.fillText(hz + 'Hz', 42 * dpr, y);
+      });
+      ctx.setLineDash([]);
+
+      // 2. Draw Live Stream Waveform
+      if (hzHistory.length >= 2) {
+        const maxPoints = 80;
+        const slice = hzHistory.slice(-maxPoints);
+        const startX = 50 * dpr;
+        const graphW = w - startX;
+        const step = graphW / (slice.length - 1);
+
+        ctx.beginPath();
+        slice.forEach((hz, i) => {
+          const x = startX + i * step;
+          const normalized = Math.min(1, hz / maxScale);
+          const y = h - (normalized * (h - 24 * dpr)) - 12 * dpr;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+
+        // Glowing Line Stroke
+        ctx.save();
+        ctx.strokeStyle = '#c084fc';
+        ctx.lineWidth = 2.5 * dpr;
+        ctx.shadowColor = '#a855f7';
+        ctx.shadowBlur = 10 * dpr;
+        ctx.stroke();
+        ctx.restore();
+
+        // Gradient Fill
+        const lastX = startX + (slice.length - 1) * step;
+        ctx.lineTo(lastX, h);
+        ctx.lineTo(startX, h);
+        ctx.closePath();
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, 'rgba(168, 85, 247, 0.3)');
+        grad.addColorStop(1, 'rgba(168, 85, 247, 0.0)');
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // Active Head Dot
+        const latestHz = slice[slice.length - 1];
+        const latestY = h - (Math.min(1, latestHz / maxScale) * (h - 24 * dpr)) - 12 * dpr;
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(lastX, latestY, 3.5 * dpr, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        // Idle placeholder guide
+        ctx.font = Math.round(11 * dpr) + 'px "Inter", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
+        ctx.fillText('La forma d'onda della frequenza USB verrà mostrata al movimento', w / 2 + 20 * dpr, h / 2);
+      }
+    }
+
+    renderWave();
+  })();
+  </script>
+</body>
+</html>

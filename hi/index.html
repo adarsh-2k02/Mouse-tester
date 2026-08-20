@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>माउस स्क्रॉल और डबल क्लिक टेस्ट - स्विच चटरिंग और डिबाउंस डिटेक्टर</title>
+  <meta name="description" content="माउस स्क्रॉल व्हील की जंपिंग, माइक्रोस्विच खराबी के कारण होने वाले अनचाहे डबल-क्लिक (चटरिंग), और दोनों बटन एक साथ दबाने का रिफ्लेक्स टेस्ट करें।">
+  <meta name="keywords" content="माउस स्क्रॉल टेस्ट, माउस डबल क्लिक टेस्ट, माउस स्विच चटरिंग, माउस व्हील रिपेयर, simultanous click test hindi">
+  <meta name="author" content="MouseTester.io">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/hi/">
+  
+  <!-- Alternate hreflang tags -->
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mousetester.pages.dev/hi/">
+  <meta property="og:title" content="माउस स्क्रॉल और डबल क्लिक टेस्ट - हार्डवेयर डायग्नोस्टिक्स">
+  <meta property="og:description" content="माउस व्हील जंपिंग, स्विच चटरिंग डबल क्लिक और साइमल्टेनियस डुअल क्लिक लेटेंसी का रीयल-टाइम टेस्ट।">
+
+  <!-- Theme & Fonts -->
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://mousetester.pages.dev/hi/#webapp",
+        "name": "MouseTester.io - माउस स्क्रॉल व्हील और डबल-क्लिक टेस्टर",
+        "url": "https://mousetester.pages.dev/hi/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+        "description": "माउस स्क्रॉल व्हील की जंपिंग, माइक्रोस्विच खराबी के कारण होने वाले अनचाहे डबल-क्लिक (चटरिंग), और दोनों बटन एक साथ दबाने का रिफ्लेक्स टेस्ट करें।",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mousetester.pages.dev/hi/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "माउस में अनचाहे डबल-क्लिक का क्या कारण है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "माइक्रोस्विच के अंदर मौजूद तांबे की स्प्रिंग का घिस जाना और संपर्क सतह पर ऑक्सीडेशन होना। इससे स्विच का बाउंस समय बढ़ जाता है और कंप्यूटर एक ही बार में दो क्लिक रजिस्टर कर लेता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "माउस के डबल-क्लिक को कैसे ठीक करें?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1. माउस सॉफ्टवेयर में डिबाउंस टाइम 8-12ms पर सेट करें। 2. कॉन्टैक्ट क्लीनर स्प्रे (जैसे WD-40 Specialist Contact Cleaner) को स्विच में छिड़कें। 3. पुराने स्विच को नए TTC Gold या ऑप्टिकल स्विच से बदलें।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "माउस का स्क्रॉल व्हील उल्टी दिशा में क्यों भागता है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "रोटरी एनकोडर के अंदर धूल और सूखा ग्रीस जमा होने से कंट्रोलर घूमने की सही दिशा नहीं पहचान पाता।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "गेमिंग माउस के लिए सामान्य डिबाउंस टाइम क्या है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "आमतौर पर 4ms से 12ms। यदि सामान्य उपयोग में 40–80ms से कम समय में दो क्लिक होते हैं, तो यह स्विच खराबी है।"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+    <!-- Top Navigation Hub (HI) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> स्क्रॉल और बटन</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS टेस्ट</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> स्पेसबार टेस्ट</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> पोलिंग रेट (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104-की कीबोर्ड</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> गेमपैड</a></li>
+        
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn">अन्य टूल्स ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ प्रतिक्रिया समय</a>
+            <a href="screen-dead-pixel.html">🖥️ डेड पिक्सेल टेस्ट</a>
+            <a href="monitor-motion-blur.html">🏎️ मोशन ब्लर टेस्ट</a>
+            <a href="microphone-test.html">🎙️ माइक्रोफ़ोन और इको</a>
+            <a href="webcam-test.html">📷 वेबकैम और FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 HI ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB टेलीमेट्री</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="container" id="testSection">
+    
+    <!-- Hero Header -->
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>हार्डवेयर सिग्नल डायग्नोस्टिक्स और टेलीमेट्री सुइट</span>
+      </div>
+      <h1 class="hero-title">माउस स्क्रॉल व्हील और डबल-क्लिक टेस्टर</h1>
+      <p class="hero-subtitle">
+        व्हील के गलत दिशा में उछलने, स्विच घिसाव के कारण अनपेक्षित डबल क्लिक, और एक साथ बाएँ+दाएँ क्लिक के समय अंतर का रीयल-टाइम डायग्नोसिस।
+      </p>
+    </div>
+
+    <!-- Duration / Mode Selector Bar -->
+    <div class="mode-selector-bar">
+      <div class="mode-buttons">
+        <button class="mode-btn active" data-seconds="0">फ्री स्क्रॉल</button>
+        <button class="mode-btn" data-seconds="15">15s स्प्रिंट</button>
+        <button class="mode-btn" data-seconds="30">30s बेंचमार्क</button>
+        <button class="mode-btn" data-seconds="60">60s सहनशक्ति</button>
+      </div>
+
+      <div id="timerContainer" class="timer-container">
+        <div class="timer-ring"></div>
+        <span>समय शेष: <strong id="timerText" style="color:var(--accent-cyan);">फ्री स्क्रॉल</strong></span>
+      </div>
+    </div>
+
+    <!-- Timer Countdown Progress Bar -->
+    <div id="timerProgressBar" class="timer-progress-bar">
+      <div id="timerProgressFill" class="timer-progress-fill"></div>
+    </div>
+
+    <!-- Main Testing Grid -->
+    <div class="app-grid">
+      
+      <!-- Interactive Stage Column -->
+      <section class="glass-panel">
+        <div class="control-bar">
+          <div class="toolbar-group">
+            <button id="resetBtn" class="btn btn-danger">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+              रीसेट
+            </button>
+            <button id="exportCsvBtn" class="btn btn-cyan">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              CSV निर्यात
+            </button>
+            <button id="printReportBtn" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              प्रिंट / PDF
+            </button>
+          </div>
+
+          <div class="toolbar-group" style="display:flex; align-items:center; gap:0.85rem;">
+            <div class="debounce-control" title="Debounce threshold for detecting microswitch chatter">
+              <span>डिबाउंस सीमा:</span>
+              <select id="debounceThresholdSelect" class="debounce-select">
+                <option value="40">40 ms</option>
+                <option value="60">60 ms</option>
+                <option value="80" selected>80 ms</option>
+                <option value="100">100 ms</option>
+                <option value="120">120 ms</option>
+              </select>
+            </div>
+
+            <label class="toggle-switch" title="Play audible click/whirr audio feedback">
+              <span>ध्वनि</span>
+              <input type="checkbox" id="soundToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Capture Stage -->
+        <div id="testStage" class="test-stage" tabindex="0">
+          <div class="stage-instructions">
+            <span>🖱️ इस बॉक्स के अंदर क्लिक या स्क्रॉल करें</span>
+            <span style="color:var(--accent-cyan)">राइट-क्लिक और साइड बटन कैप्चर किए गए</span>
+          </div>
+
+          <!-- Vector Mouse Visualizer SVG -->
+          <div class="mouse-svg-wrapper">
+            <svg class="mouse-svg" viewBox="0 0 200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <filter id="mouseGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+              </filter>
+
+              <!-- Main Body Shell -->
+              <path class="mouse-body" filter="url(#mouseGlow)" d="M 45,100 C 45,35 65,15 100,15 C 135,15 155,35 155,100 C 155,190 165,240 145,285 C 130,315 70,315 55,285 C 35,240 45,190 45,100 Z" />
+              <path class="mouse-accent-lines" d="M 68,200 C 85,250 115,250 132,200" />
+              <path class="mouse-accent-lines" d="M 75,230 C 90,265 110,265 125,230" />
+
+              <!-- Left & Right Buttons -->
+              <path id="svgBtnLeft" class="mouse-btn" d="M 52,95 C 50,45 68,24 95,22 L 95,115 C 72,115 54,110 52,95 Z" />
+              <path id="svgBtnRight" class="mouse-btn" d="M 148,95 C 150,45 132,24 105,22 L 105,115 C 128,115 146,110 148,95 Z" />
+
+              <!-- Center Wheel Well -->
+              <rect x="91" y="32" width="18" height="58" rx="9" fill="#0d121c" stroke="#253046" stroke-width="2"/>
+
+              <!-- Scroll Wheel (MMB) -->
+              <g id="svgWheel" class="mouse-wheel">
+                <rect x="93" y="35" width="14" height="52" rx="7" />
+                <line x1="95" y1="46" x2="105" y2="46" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="95" y1="56" x2="105" y2="56" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="95" y1="66" x2="105" y2="66" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="95" y1="76" x2="105" y2="76" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Side Buttons (M4 Back / M5 Forward) -->
+              <path id="svgBtnBack" class="mouse-btn btn-side" d="M 40,165 C 38,150 38,135 41,122 L 47,126 C 45,138 45,150 47,162 Z" />
+              <path id="svgBtnForward" class="mouse-btn btn-side" d="M 41,118 C 38,105 38,92 42,80 L 48,84 C 45,95 45,107 47,114 Z" />
+
+              <!-- Text Indicators -->
+              <text x="73" y="75" fill="#64748b" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">LMB</text>
+              <text x="127" y="75" fill="#64748b" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">RMB</text>
+              <text x="24" y="102" fill="#64748b" font-size="9" font-weight="700" font-family="sans-serif">M5</text>
+              <text x="24" y="146" fill="#64748b" font-size="9" font-weight="700" font-family="sans-serif">M4</text>
+            </svg>
+          </div>
+
+          <!-- Tilt Wheel Horizontal Indicators -->
+          <div class="wheel-tilt-indicator">
+            <span id="tiltLeftIndicator" class="tilt-arrow">◀ Tilt Left</span>
+            <span id="tiltRightIndicator" class="tilt-arrow">Tilt Right ▶</span>
+          </div>
+
+          <!-- Direction Alert Overlay -->
+          <div class="scroll-arrow-indicator">
+            <div id="directionBadge" class="direction-badge">▲ Scrolling UP</div>
+          </div>
+
+          <!-- Real-Time Glitch Alert Notification -->
+          <div id="glitchToast" class="glitch-toast">
+            ⚠️ Hardware Reverse Glitch Detected!
+          </div>
+
+          <div class="stage-watermark">हाई-फ्रीक्वेंसी पॉइंटर इवेंट स्ट्रीम</div>
+
+          <!-- Stage Lock Overlay upon Timed Mode Completion -->
+          <div id="stageLockOverlay" class="stage-lock-overlay">
+            <div id="lockVerdictBadge" class="verdict-badge-large clean">
+              ✅ Clean Hardware Signal
+            </div>
+            <p id="lockDetailsText" style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1.5rem; max-width:460px;">
+              Your timed test completed with 0 reverse jump anomalies.
+            </p>
+            <div style="display:flex; gap:0.75rem;">
+              <button id="restartTimedBtn" class="btn btn-secondary">Run Another Test</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button Status State Grid (Including Dual LMB+RMB Chord) -->
+        <div class="button-state-grid" style="grid-template-columns: repeat(6, 1fr);">
+          <div id="chipLmb" class="button-chip">
+            <span class="chip-name">बायाँ (LMB)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipMmb" class="button-chip">
+            <span class="chip-name">मध्य (MMB)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipRmb" class="button-chip">
+            <span class="chip-name">दायाँ (RMB)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipM4" class="button-chip">
+            <span class="chip-name">पीछे (M4)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipM5" class="button-chip">
+            <span class="chip-name">आगे (M5)</span>
+            <span class="chip-count">0</span>
+          </div>
+          <div id="chipDualClick" class="button-chip dual-chord">
+            <span class="chip-name">डुअल LMB+RMB कॉर्ड</span>
+            <span class="chip-count"><span id="chipDualCount">0</span> (<span id="chipDualDelta" style="font-size:0.75rem; color:var(--accent-cyan);">-- ms</span>)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metrics & Real-Time Waveform Column -->
+      <section class="metrics-column">
+        
+        <!-- Live Stat Cards Grid -->
+        <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+          <div class="stat-card highlight">
+            <div class="stat-label">
+              <span>कुल स्क्रॉल</span>
+              <span class="stat-badge">Ticks</span>
+            </div>
+            <div class="stat-value" id="statTotalScrolls">0</div>
+          </div>
+
+          <div class="stat-card alert-card">
+            <div class="stat-label">
+              <span>विपरीत जंप</span>
+              <span class="stat-badge">Glitches</span>
+            </div>
+            <div class="stat-value" id="statGlitches">0</div>
+          </div>
+
+          <div class="stat-card alert-card">
+            <div class="stat-label">
+              <span>डबल-क्लिक विसंगति</span>
+              <span class="stat-badge">Chatter</span>
+            </div>
+            <div class="stat-value" id="statDoubleClicks" style="color:var(--accent-rose);">0</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>डुअल क्लिक अंतर</span>
+              <span class="stat-badge">Sync</span>
+            </div>
+            <div class="stat-value" id="statDualSync" style="color:var(--accent-cyan);">--</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>त्रुटि दर</span>
+              <span class="stat-badge">Error %</span>
+            </div>
+            <div class="stat-value" id="statGlitchRate">0.0%</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>वर्तमान गति</span>
+              <span class="stat-badge">Live</span>
+            </div>
+            <div class="stat-value"><span id="statCurrentSpeed">0</span><span class="stat-unit">evt/s</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>उच्चतम गति</span>
+              <span class="stat-badge">Max</span>
+            </div>
+            <div class="stat-value"><span id="statPeakSpeed">0</span><span class="stat-unit">evt/s</span></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">
+              <span>संचित Y विस्थापन</span>
+              <span class="stat-badge" id="statDeltaMode">Pixels</span>
+            </div>
+            <div class="stat-value" id="statAccumulatedY">0px</div>
+          </div>
+        </div>
+
+        <!-- Polarity Ratio Track Bar -->
+        <div class="polarity-bar-card">
+          <div class="polarity-header">
+            <span>स्क्रॉल पोलारिटी अनुपात</span>
+            <span id="polarityText" style="color:var(--accent-cyan);">100% Dominant / 0% Opposing</span>
+          </div>
+          <div class="polarity-track">
+            <div id="polarityFill" class="polarity-dominant-fill"></div>
+          </div>
+        </div>
+
+        <!-- 120Hz Oscilloscope Waveform Canvas -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <div class="chart-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              रीयल-टाइम स्क्रॉल गति तरंग (120Hz)
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot blue"></span> ऊपर</span>
+              <span class="legend-item"><span class="legend-dot purple"></span> नीचे</span>
+              <span class="legend-item"><span class="legend-dot red"></span> गड़बड़ी</span>
+            </div>
+          </div>
+          <canvas id="scrollWaveCanvas"></canvas>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Diagnostic Verdict Banner -->
+    <div id="healthBanner" class="health-verdict-banner">
+      <div id="verdictIcon" class="verdict-icon">✨</div>
+      <div class="verdict-content">
+        <h3 id="verdictTitle" class="verdict-title">Ready for Diagnostic Testing</h3>
+        <p id="verdictDesc" class="verdict-desc">
+          Scroll your wheel continuously up and down inside the test stage and click buttons to check for rotary encoder bounce and switch chatter double clicks.
+        </p>
+      </div>
+    </div>
+
+    <!-- Real-time Event Telemetry Log -->
+    <div class="log-card">
+      <div class="log-header">
+        <div class="log-title">लाइव टेलीमेट्री और इवेंट स्ट्रीम</div>
+        <span style="font-size:0.75rem; color:var(--text-subtle);">Real-Time Microsecond Precision</span>
+      </div>
+      <div id="eventLogList" class="log-list"></div>
+    </div>
+
+    <!-- Technical Guide & SEO Content Section -->
+    <section class="content-section">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="section-badge">हार्डवेयर यांत्रिकी और मरम्मत</span>
+        <h2 class="section-title">माउस व्हील जंप और स्विच चटरिंग का पूरा विवरण</h2>
+        <p class="section-lead">जानें कि माउस का पहिया गलत दिशा में क्यों उछलता है और स्विच घिसने पर अनचाहे डबल-क्लिक कैसे ठीक करें।</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-card-icon">⚙️</div>
+          <h3>रोटरी एनकोडर रिवर्सल ग्लिच</h3>
+          <p>ज्यादातर माउस 2-फेज मैकेनिकल रोटरी एनकोडर का उपयोग करते हैं। जब धूल या सूखा ग्रीस पिन को रोकता है, तो सिग्नल छूट जाता है और स्क्रीन उल्टी दिशा में कूदती है।</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-card-icon">⚡</div>
+          <h3>स्विच चटरिंग और अनचाहा डबल-क्लिक</h3>
+          <p>मैकेनिकल माइक्रोस्विच में कॉपर लीफ स्प्रिंग होती है। उम्र के साथ धातु थक जाती है और क्लिक करने पर बाउंस बढ़ जाता है, जिससे स्वतः दो बार क्लिक दर्ज होता है।</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-card-icon">🎯</div>
+          <h3>साइमल्टेनियस डुअल क्लिक (LMB + RMB)</h3>
+          <p>गेमिंग में बाएँ और दाएँ बटन को एक साथ दबाने का समन्वय बहुत महत्वपूर्ण है। हमारा टाइमर माइक्रोसेकंड में दोनों क्लिक के बीच का अंतर मापता है।</p>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="faq-section" id="faq">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>माउस में अनचाहे डबल-क्लिक का क्या कारण है?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>माइक्रोस्विच के अंदर मौजूद तांबे की स्प्रिंग का घिस जाना और संपर्क सतह पर ऑक्सीडेशन होना। इससे स्विच का बाउंस समय बढ़ जाता है और कंप्यूटर एक ही बार में दो क्लिक रजिस्टर कर लेता है।</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>माउस के डबल-क्लिक को कैसे ठीक करें?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>1. माउस सॉफ्टवेयर में डिबाउंस टाइम 8-12ms पर सेट करें। 2. कॉन्टैक्ट क्लीनर स्प्रे (जैसे WD-40 Specialist Contact Cleaner) को स्विच में छिड़कें। 3. पुराने स्विच को नए TTC Gold या ऑप्टिकल स्विच से बदलें।</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>माउस का स्क्रॉल व्हील उल्टी दिशा में क्यों भागता है?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>रोटरी एनकोडर के अंदर धूल और सूखा ग्रीस जमा होने से कंट्रोलर घूमने की सही दिशा नहीं पहचान पाता।</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>गेमिंग माउस के लिए सामान्य डिबाउंस टाइम क्या है?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>आमतौर पर 4ms से 12ms। यदि सामान्य उपयोग में 40–80ms से कम समय में दो क्लिक होते हैं, तो यह स्विच खराबी है।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% क्लाइंट-साइड शुद्ध जावास्क्रिप्ट। कोई बाहरी ट्रैकर नहीं। निजी और अल्ट्रा-लो लेटेंसी हार्डवेयर टेस्टिंग।
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>इनपुट डायग्नोस्टिक्स</h4>
+          <ul>
+            <li><a href="index.html">🖱️ स्क्रॉल और बटन</a></li>
+            <li><a href="cps-test.html">⚡ CPS टेस्ट</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ स्पेसबार टेस्ट</a></li>
+            <li><a href="polling-rate-test.html">🔄 पोलिंग रेट (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104-की कीबोर्ड</a></li>
+            <li><a href="gamepad-test.html">🎮 गेमपैड</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>डिस्प्ले और मीडिया</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ प्रतिक्रिया समय</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ डेड पिक्सेल टेस्ट</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ मोशन ब्लर टेस्ट</a></li>
+            <li><a href="microphone-test.html">🎙️ माइक्रोफ़ोन और इको</a></li>
+            <li><a href="webcam-test.html">📷 वेबकैम और FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>नीति और कानूनी</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ गोपनीयता नीति (Privacy)</a></li>
+            <li><a href="../terms-of-service.html">📜 सेवा की शर्तें (Terms)</a></li>
+            <li><a href="../about.html">💡 हमारे बारे में (About)</a></li>
+            <li><a href="../contact.html">✉️ संपर्क और सहायता</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. सर्वाधिकार सुरक्षित।</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">गोपनीयता नीति (Privacy)</a>
+          <a href="../terms-of-service.html">सेवा की शर्तें (Terms)</a>
+          <a href="../about.html">हमारे बारे में (About)</a>
+          <a href="../contact.html">संपर्क और सहायता</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

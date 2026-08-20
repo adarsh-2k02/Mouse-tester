@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CPS Test (Kliks Per Seconde) - Muis Kliksnelheid Test</title>
+  <meta name="description" content="Meet hoeveel keer je per seconde kunt klikken (CPS). Modus voor 1s, 5s, 10s, 30s en 60s met realtime frequentiegrafiek en jitter/butterfly klikrangschikking.">
+  <meta name="keywords" content="cps test, muis kliksnelheid test, kliks per seconde, butterfly click test, jitter click test, muis snelheidsteller">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/nl/cps-test.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/cps-test.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/cps-test.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/cps-test.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/cps-test.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/cps-test.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/cps-test.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/cps-test.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/cps-test.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/cps-test.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/cps-test.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/cps-test.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (NL) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> Scroll & Knoppen</a></li>
+        <li><a href="cps-test.html" class="active"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS-Test</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> Spatiebalk</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Polling Rate (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> Toetsenbord 104</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> Gamepad</a></li>
+        
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn">Meer Tools ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ Reactietijd Test</a>
+            <a href="screen-dead-pixel.html">🖥️ Dode Pixels Test</a>
+            <a href="monitor-motion-blur.html">🏎️ Bewegingsonscherpte</a>
+            <a href="microphone-test.html">🎙️ Microfoon & Echo</a>
+            <a href="webcam-test.html">📷 Webcam & FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 NL ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB-Telemetrie</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill"><span class="pulse-dot"></span><span>Nauwkeurige Muis Kliksnelheid Teller</span></div>
+      <h1 class="hero-title">CPS Kliksnelheid Test</h1>
+      <p class="hero-subtitle">Test hoeveel kliks per seconde (CPS) je kunt behalen in verschillende tijdsduurmodi.</p>
+    </div>
+
+    <!-- Mode Selector -->
+    <div class="mode-selector-bar">
+      <div class="mode-buttons" id="cpsModeGroup">
+        <button class="mode-btn" data-sec="1">1s</button>
+        <button class="mode-btn active" data-sec="5">5s Standaard</button>
+        <button class="mode-btn" data-sec="10">10s</button>
+        <button class="mode-btn" data-sec="30">30s</button>
+      </div>
+      <div class="timer-container">
+        <span>Resterend: <strong id="cpsTimerText" style="color:var(--accent-cyan);">5.0s</strong></span>
+      </div>
+    </div>
+
+    <div class="timer-progress-bar active" style="display:block;">
+      <div id="cpsProgressFill" class="timer-progress-fill" style="width:100%;"></div>
+    </div>
+
+    <div class="app-grid">
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="cpsResetBtn" class="btn btn-danger">Reset</button>
+          <div style="font-size:0.85rem; color:var(--text-muted);">Totaal Kliks: <strong id="cpsTotalClicks" style="color:var(--text-main); font-family:var(--font-mono);">0</strong></div>
+        </div>
+
+        <div id="cpsClickStage" class="cps-click-stage" tabindex="0">
+          <div style="font-size:0.85rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem;">Klik hier zo snel mogelijk</div>
+          <div class="cps-huge-value" id="cpsLiveDisplay">0.0</div>
+          <div style="font-size:0.85rem; color:var(--text-subtle); margin-top:0.25rem;">Kliks Per Seconde (CPS)</div>
+          <div id="cpsRankBadge" class="cps-rank-badge"><span>⚡ Klaar om te klikken</span></div>
+        </div>
+      </section>
+
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label"><span>Uiteindelijke CPS</span><span class="stat-badge">Score</span></div>
+            <div class="stat-value" id="statFinalCps">0.0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>Hoogste 1s Piek</span><span class="stat-badge">Max</span></div>
+            <div class="stat-value" id="statPeakCps">0.0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>Gem. Interval</span><span class="stat-badge">ms</span></div>
+            <div class="stat-value"><span id="statAvgInterval">0</span><span class="stat-unit">ms</span></div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-header"><div class="chart-title">Realtime Klikgolfvorm</div></div>
+          <canvas id="cpsWaveCanvas" style="width:100%; height:130px; background:#0d121c; border-radius:var(--radius-sm); display:block;"></canvas>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% Client-Side Pure JavaScript. Geen trackers. Privé en ultra-lage latency hardware tests.
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>Invoerdiagnose</h4>
+          <ul>
+            <li><a href="index.html">🖱️ Scroll & Knoppen</a></li>
+            <li><a href="cps-test.html">⚡ CPS-Test</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ Spatiebalk</a></li>
+            <li><a href="polling-rate-test.html">🔄 Polling Rate (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 Toetsenbord 104</a></li>
+            <li><a href="gamepad-test.html">🎮 Gamepad</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>Scherm & Media</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ Reactietijd Test</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ Dode Pixels Test</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ Bewegingsonscherpte</a></li>
+            <li><a href="microphone-test.html">🎙️ Microfoon & Echo</a></li>
+            <li><a href="webcam-test.html">📷 Webcam & FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Juridisch & Vertrouwen</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ Privacybeleid</a></li>
+            <li><a href="../terms-of-service.html">📜 Gebruiksvoorwaarden</a></li>
+            <li><a href="../about.html">💡 Over Ons</a></li>
+            <li><a href="../contact.html">✉️ Contact & Ondersteuning</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. Alle rechten voorbehouden.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">Privacybeleid</a>
+          <a href="../terms-of-service.html">Gebruiksvoorwaarden</a>
+          <a href="../about.html">Over Ons</a>
+          <a href="../contact.html">Contact & Ondersteuning</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    let modeDuration = 5;
+    let isRunning = false;
+    let isFinished = false;
+    let clickCount = 0;
+    let startTime = 0;
+    let timerInterval = null;
+    let clickTimestamps = [];
+    let cpsHistory = [];
+
+    const clickStage = document.getElementById('cpsClickStage');
+    const liveDisplay = document.getElementById('cpsLiveDisplay');
+    const timerText = document.getElementById('cpsTimerText');
+    const progressFill = document.getElementById('cpsProgressFill');
+    const totalClicksEl = document.getElementById('cpsTotalClicks');
+    const finalCpsEl = document.getElementById('statFinalCps');
+    const peakCpsEl = document.getElementById('statPeakCps');
+    const avgIntervalEl = document.getElementById('statAvgInterval');
+    const rankBadge = document.getElementById('cpsRankBadge');
+    const resetBtn = document.getElementById('cpsResetBtn');
+    const modeBtns = document.querySelectorAll('#cpsModeGroup .mode-btn');
+    const canvas = document.getElementById('cpsWaveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function resetTest() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      isFinished = false;
+      clickCount = 0;
+      clickTimestamps = [];
+      cpsHistory = [];
+      totalClicksEl.textContent = '0';
+      liveDisplay.textContent = '0.0';
+      timerText.textContent = `${modeDuration.toFixed(1)}s`;
+      progressFill.style.width = '100%';
+      finalCpsEl.textContent = '0.0';
+      peakCpsEl.textContent = '0.0';
+      avgIntervalEl.textContent = '0';
+      rankBadge.innerHTML = '<span>⚡ Klaar om te klikken</span>';
+    }
+
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeDuration = parseFloat(btn.dataset.sec);
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        resetTest();
+      });
+    });
+
+    resetBtn.addEventListener('click', resetTest);
+
+    function startTest() {
+      isRunning = true;
+      startTime = performance.now();
+      timerInterval = setInterval(() => {
+        const elapsed = (performance.now() - startTime) / 1000;
+        const remaining = Math.max(0, modeDuration - elapsed);
+        timerText.textContent = `${remaining.toFixed(1)}s`;
+        progressFill.style.width = `${(remaining / modeDuration) * 100}%`;
+
+        const currentCps = elapsed > 0 ? (clickCount / elapsed).toFixed(1) : '0.0';
+        liveDisplay.textContent = currentCps;
+        cpsHistory.push(parseFloat(currentCps));
+        drawWave();
+
+        if (remaining <= 0) finishTest();
+      }, 50);
+    }
+
+    function finishTest() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      isFinished = true;
+      timerText.textContent = '0.0s';
+      progressFill.style.width = '0%';
+      const finalCps = (clickCount / modeDuration).toFixed(2);
+      liveDisplay.textContent = finalCps;
+      finalCpsEl.textContent = finalCps;
+
+      let peak = 0;
+      for (let i = 0; i < clickTimestamps.length; i++) {
+        const t = clickTimestamps[i];
+        const within1s = clickTimestamps.filter(x => x >= t && x < t + 1000).length;
+        if (within1s > peak) peak = within1s;
+      }
+      peakCpsEl.textContent = peak.toFixed(1);
+
+      if (clickTimestamps.length > 1) {
+        const intervals = [];
+        for (let i = 1; i < clickTimestamps.length; i++) intervals.push(clickTimestamps[i] - clickTimestamps[i-1]);
+        avgIntervalEl.textContent = (intervals.reduce((a, b) => a + b, 0) / intervals.length).toFixed(1);
+      }
+
+      const cpsNum = parseFloat(finalCps);
+      const rank = cpsNum >= 12 ? '🐆 Jachtluipaard (Supersnel)' : (cpsNum >= 9 ? '🦅 Valk' : (cpsNum >= 7 ? '🐺 Wolf' : (cpsNum >= 5 ? '🐰 Konijn' : '🐢 Schildpad')));
+      rankBadge.innerHTML = `<span>Rang: ${rank} (${finalCps} CPS)</span>`;
+    }
+
+    clickStage.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      if (isFinished) return;
+      if (!isRunning) startTest();
+
+      const now = performance.now();
+      clickCount++;
+      clickTimestamps.push(now);
+      totalClicksEl.textContent = clickCount;
+
+      const elapsed = (now - startTime) / 1000;
+      const cps = elapsed > 0 ? (clickCount / elapsed).toFixed(1) : '1.0';
+      liveDisplay.textContent = cps;
+    });
+
+    clickStage.addEventListener('contextmenu', e => e.preventDefault());
+
+    function drawWave() {
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      if (cpsHistory.length < 2) return;
+      const maxPoints = 60;
+      const slice = cpsHistory.slice(-maxPoints);
+      const step = w / (slice.length - 1);
+
+      ctx.beginPath();
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+
+      slice.forEach((cps, i) => {
+        const x = i * step;
+        const normalized = Math.min(1, cps / 20);
+        const y = h - (normalized * (h - 20)) - 10;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+    }
+  })();
+  </script>
+</body>
+</html>

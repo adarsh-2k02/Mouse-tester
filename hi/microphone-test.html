@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ऑनलाइन माइक्रोफ़ोन टेस्ट - ऑडियो लेवल dBFS और इको प्लेबैक जाँच</title>
+  <meta name="description" content="लाइव dBFS वॉल्यूम मीटर, रीयल-टाइम फ़्रीक्वेंसी स्पेक्ट्रम और 5-सेकंड लोकल इको प्लेबैक टेस्ट के साथ अपने माइक्रोफ़ोन का परीक्षण करें। 100% सुरक्षित और प्राइवेट।">
+  <meta name="keywords" content="माइक्रोफोन टेस्ट ऑनलाइन, mic test hindi, माइक्रोफोन आवाज चेक, mic echo test, mic dbfs meter">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mousetester.pages.dev/hi/microphone-test.html">
+  <link rel="alternate" hreflang="en" href="https://mousetester.pages.dev/microphone-test.html">
+  <link rel="alternate" hreflang="es" href="https://mousetester.pages.dev/es/microphone-test.html">
+  <link rel="alternate" hreflang="de" href="https://mousetester.pages.dev/de/microphone-test.html">
+  <link rel="alternate" hreflang="fr" href="https://mousetester.pages.dev/fr/microphone-test.html">
+  <link rel="alternate" hreflang="it" href="https://mousetester.pages.dev/it/microphone-test.html">
+  <link rel="alternate" hreflang="ja" href="https://mousetester.pages.dev/ja/microphone-test.html">
+  <link rel="alternate" hreflang="zh" href="https://mousetester.pages.dev/zh/microphone-test.html">
+  <link rel="alternate" hreflang="ko" href="https://mousetester.pages.dev/ko/microphone-test.html">
+  <link rel="alternate" hreflang="hi" href="https://mousetester.pages.dev/hi/microphone-test.html">
+  <link rel="alternate" hreflang="nl" href="https://mousetester.pages.dev/nl/microphone-test.html">
+  <link rel="alternate" hreflang="x-default" href="https://mousetester.pages.dev/microphone-test.html">
+
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../theme-i18n.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Hub (HI) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+            <path d="M12 6v4"></path>
+          </svg>
+        </div>
+        <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg> स्क्रॉल और बटन</a></li>
+        <li><a href="cps-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> CPS टेस्ट</a></li>
+        <li><a href="spacebar-clicker.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="9" width="18" height="6" rx="2"></rect></svg> स्पेसबार टेस्ट</a></li>
+        <li><a href="polling-rate-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> पोलिंग रेट (Hz)</a></li>
+        <li><a href="keyboard-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg> 104-की कीबोर्ड</a></li>
+        <li><a href="gamepad-test.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4m-2-2v4m9-2h.01M17 10h.01"></path></svg> गेमपैड</a></li>
+        
+        <li class="nav-dropdown active">
+          <button class="nav-dropdown-btn">अन्य टूल्स ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="reaction-time-test.html">⚡ प्रतिक्रिया समय</a>
+            <a href="screen-dead-pixel.html">🖥️ डेड पिक्सेल टेस्ट</a>
+            <a href="monitor-motion-blur.html">🏎️ मोशन ब्लर टेस्ट</a>
+            <a href="microphone-test.html" class="active">🎙️ माइक्रोफ़ोन और इको</a>
+            <a href="webcam-test.html">📷 वेबकैम और FPS</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">🌙 <span class="theme-text">Dark</span></button>
+        
+        <div class="lang-dropdown">
+          <button id="currentLangBtn" class="lang-btn">🌐 HI ▾</button>
+          <div id="langDropdownList" class="lang-dropdown-menu"></div>
+        </div>
+
+        <span class="nav-badge">USB टेलीमेट्री</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>Web Audio API रीयल-टाइम माइक्रोफ़ोन डायग्नोस्टिक</span>
+      </div>
+      <h1 class="hero-title">माइक्रोफ़ोन टेस्ट और इको प्लेबैक</h1>
+      <p class="hero-subtitle">
+        अपने माइक का वॉल्यूम लेवल, dBFS क्लिपिंग, फ़्रीक्वेंसी स्पेक्ट्रम चेक करें और 5-सेकंड ऑडियो प्लेबैक टेस्ट करें।
+      </p>
+    </div>
+
+    <div class="app-grid">
+      <section class="glass-panel">
+        <div class="control-bar">
+          <button id="startMicBtn" class="btn btn-cyan">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            माइक्रोफ़ोन चालू करें
+          </button>
+            <button id="stopMicBtn" class="btn btn-danger" style="display:none;">⏹️ माइक रोकें</button>
+          <button id="echoRecordBtn" class="btn btn-secondary" disabled>
+            🎙️ 5s इको टेस्ट रिकॉर्ड करें
+          </button>
+        </div>
+
+        <div style="margin-bottom:1.5rem;">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">
+            <span>इनपुट वॉल्यूम स्तर (dBFS)</span>
+            <span id="dbfsLabel" style="color:var(--accent-cyan); font-family:var(--font-mono);">-Infinity dBFS</span>
+          </div>
+          <div class="trigger-meter-track" style="height:14px; background:var(--bg-tertiary);">
+            <div id="micVolumeBar" class="trigger-meter-fill" style="width:0%; transition:width 0.05s ease;"></div>
+          </div>
+        </div>
+
+        <div class="chart-container" style="margin-bottom:0;">
+          <div class="chart-header">
+            <div class="chart-title">ऑडियो फ़्रीक्वेंसी स्पेक्ट्रम विज़ुअलाइज़र</div>
+          </div>
+          <canvas id="micFreqCanvas" style="width:100%; height:140px; background:#0d121c; border-radius:var(--radius-sm); display:block;"></canvas>
+        </div>
+      </section>
+
+      <section class="metrics-column">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-label"><span>पीक वॉल्यूम</span><span class="stat-badge">dBFS</span></div>
+            <div class="stat-value" id="statPeakDbfs">--</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>प्रमुख आवृत्ति</span><span class="stat-badge">Hz</span></div>
+            <div class="stat-value" id="statDominantHz">--</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span>सैंपल दर</span><span class="stat-badge">kHz</span></div>
+            <div class="stat-value" id="statSampleRate">--</div>
+          </div>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <div class="guide-card-icon">🎙️</div>
+          <h3>माइक डायग्नोस्टिक</h3>
+          <p id="micVerdict" style="margin-bottom:0;">ब्राउज़र अनुमति देने और टेस्ट शुरू करने के लिए "माइक्रोफ़ोन चालू करें" पर क्लिक करें।</p>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Privacy Statement -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:0.75rem; display:inline-flex;">
+            <div class="brand-icon" style="width:28px; height:28px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="7"></rect>
+                <path d="M12 6v4"></path>
+              </svg>
+            </div>
+            <span>MouseTester<span style="color:var(--accent-cyan)">.io</span></span>
+          </a>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            100% क्लाइंट-साइड शुद्ध जावास्क्रिप्ट। कोई बाहरी ट्रैकर नहीं। निजी और अल्ट्रा-लो लेटेंसी हार्डवेयर टेस्टिंग।
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--accent-emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:var(--radius-full);">
+            <span>🔒 100% Client-Side Privacy</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Input Diagnostics -->
+        <div class="footer-col">
+          <h4>इनपुट डायग्नोस्टिक्स</h4>
+          <ul>
+            <li><a href="index.html">🖱️ स्क्रॉल और बटन</a></li>
+            <li><a href="cps-test.html">⚡ CPS टेस्ट</a></li>
+            <li><a href="spacebar-clicker.html">⌨️ स्पेसबार टेस्ट</a></li>
+            <li><a href="polling-rate-test.html">🔄 पोलिंग रेट (Hz)</a></li>
+            <li><a href="keyboard-test.html">🖮 104-की कीबोर्ड</a></li>
+            <li><a href="gamepad-test.html">🎮 गेमपैड</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Display & Media -->
+        <div class="footer-col">
+          <h4>डिस्प्ले और मीडिया</h4>
+          <ul>
+            <li><a href="reaction-time-test.html">⚡ प्रतिक्रिया समय</a></li>
+            <li><a href="screen-dead-pixel.html">🖥️ डेड पिक्सेल टेस्ट</a></li>
+            <li><a href="monitor-motion-blur.html">🏎️ मोशन ब्लर टेस्ट</a></li>
+            <li><a href="microphone-test.html">🎙️ माइक्रोफ़ोन और इको</a></li>
+            <li><a href="webcam-test.html">📷 वेबकैम और FPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>नीति और कानूनी</h4>
+          <ul>
+            <li><a href="../privacy-policy.html">🛡️ गोपनीयता नीति (Privacy)</a></li>
+            <li><a href="../terms-of-service.html">📜 सेवा की शर्तें (Terms)</a></li>
+            <li><a href="../about.html">💡 हमारे बारे में (About)</a></li>
+            <li><a href="../contact.html">✉️ संपर्क और सहायता</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MouseTester.io. सर्वाधिकार सुरक्षित।</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="../privacy-policy.html">गोपनीयता नीति (Privacy)</a>
+          <a href="../terms-of-service.html">सेवा की शर्तें (Terms)</a>
+          <a href="../about.html">हमारे बारे में (About)</a>
+          <a href="../contact.html">संपर्क और सहायता</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    let audioCtx = null;
+    let analyser = null;
+    let microphone = null;
+    let isMicActive = false;
+    let mediaRecorder = null;
+    let audioChunks = [];
+
+    const startBtn = document.getElementById('startMicBtn');
+
+    const stopBtn = document.getElementById('stopMicBtn');
+
+    function stopMicrophone() {
+      if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+      }
+      if (audioCtx) {
+        try { audioCtx.close(); } catch(e) {}
+        audioCtx = null;
+      }
+      analyser = null;
+      startBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg> Enable Microphone';
+      startBtn.classList.remove('btn-secondary');
+      startBtn.classList.add('btn-cyan');
+      if (stopBtn) stopBtn.style.display = 'none';
+      echoBtn.disabled = true;
+      meterFill.style.width = '0%';
+      dbfsLabel.textContent = '-Infinity dBFS';
+      peakVolEl.textContent = '0%';
+      sampleRateEl.textContent = '--';
+      channelsEl.textContent = '--';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    if (stopBtn) stopBtn.addEventListener('click', stopMicrophone);
+    const echoBtn = document.getElementById('echoRecordBtn');
+    const volumeBar = document.getElementById('micVolumeBar');
+    const dbfsLabel = document.getElementById('dbfsLabel');
+    const peakDbfsEl = document.getElementById('statPeakDbfs');
+    const dominantHzEl = document.getElementById('statDominantHz');
+    const sampleRateEl = document.getElementById('statSampleRate');
+    const micVerdict = document.getElementById('micVerdict');
+    const canvas = document.getElementById('micFreqCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    async function initMic() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+
+        microphone = audioCtx.createMediaStreamSource(stream);
+        microphone.connect(analyser);
+
+        isMicActive = true;
+        startBtn.textContent = '⏹️ माइक बंद करें';
+        startBtn.classList.remove('btn-cyan');
+        startBtn.classList.add('btn-danger');
+        echoBtn.disabled = false;
+        sampleRateEl.textContent = `${(audioCtx.sampleRate / 1000).toFixed(1)} kHz`;
+        micVerdict.textContent = 'माइक सक्रिय है। वॉल्यूम और स्पेक्ट्रम चेक करने के लिए बोलें।';
+
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = (e) => audioChunks.push(e.data);
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(audioChunks, { type: 'audio/webm' });
+          audioChunks = [];
+          const audioUrl = URL.createObjectURL(blob);
+          const audio = new Audio(audioUrl);
+          audio.play();
+          echoBtn.textContent = '▶️ इको प्ले हो रहा है...';
+          audio.onended = () => {
+            echoBtn.textContent = '🎙️ 5s इको टेस्ट रिकॉर्ड करें';
+            echoBtn.disabled = false;
+          };
+        };
+
+        drawVisualizer();
+      } catch (err) {
+        micVerdict.textContent = 'माइक एक्सेस विफल। कृपया ब्राउज़र अनुमति की जाँच करें।';
+      }
+    }
+
+    startBtn.addEventListener('click', () => {
+      if (!isMicActive) {
+        initMic();
+      } else {
+        if (audioCtx) audioCtx.close();
+        isMicActive = false;
+        startBtn.textContent = 'माइक्रोफ़ोन चालू करें';
+        startBtn.classList.remove('btn-danger');
+        startBtn.classList.add('btn-cyan');
+        echoBtn.disabled = true;
+        volumeBar.style.width = '0%';
+        dbfsLabel.textContent = '-Infinity dBFS';
+        micVerdict.textContent = 'माइक बंद कर दिया गया है।';
+      }
+    });
+
+    echoBtn.addEventListener('click', () => {
+      if (!mediaRecorder || mediaRecorder.state === 'recording') return;
+      audioChunks = [];
+      mediaRecorder.start();
+      echoBtn.textContent = '🔴 रिकॉर्डिंग जारी (5s)...';
+      echoBtn.disabled = true;
+
+      setTimeout(() => {
+        if (mediaRecorder.state === 'recording') mediaRecorder.stop();
+      }, 5000);
+    });
+
+    function drawVisualizer() {
+      if (!isMicActive) return;
+      requestAnimationFrame(drawVisualizer);
+
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      analyser.getByteFrequencyData(dataArray);
+
+      let sum = 0;
+      let maxVal = 0;
+      let maxIdx = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        sum += dataArray[i];
+        if (dataArray[i] > maxVal) {
+          maxVal = dataArray[i];
+          maxIdx = i;
+        }
+      }
+      const avg = sum / bufferLength;
+      const pct = Math.min(100, Math.round((avg / 128) * 100));
+      volumeBar.style.width = `${pct}%`;
+
+      const dbfs = avg > 0 ? Math.round(20 * Math.log10(avg / 255)) : -100;
+      dbfsLabel.textContent = `${dbfs} dBFS`;
+      peakDbfsEl.textContent = `${dbfs} dBFS`;
+
+      const dominantHz = Math.round(maxIdx * (audioCtx.sampleRate / analyser.fftSize));
+      dominantHzEl.textContent = `${dominantHz} Hz`;
+
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const barWidth = (w / bufferLength) * 1.5;
+      let x = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        const barHeight = (dataArray[i] / 255) * (h - 10);
+        ctx.fillStyle = `hsl(${180 + (i * 2)}, 90%, 50%)`;
+        ctx.fillRect(x, h - barHeight, barWidth - 1, barHeight);
+        x += barWidth;
+      }
+    }
+  })();
+  </script>
+</body>
+</html>
